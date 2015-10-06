@@ -18,7 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$','Login.views.loginMethod',name=''),
+    url(r'^$','Login.views.indexMethod',name=''),
     url(r'^register/$','Login.views.registerMethod',name='register'),
     url(r'^login/$','Login.views.loginMethod',name='login'),
+    url(r'^index/$','Login.views.indexMethod',name='index'),
+    url(r'^logout/$','Login.views.logoutMethod',name='logout'),
 ]

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {%if usrname != ''%}
+    <p>Login successfully!</p>
+    <p>{{usrname}}</p>
+    <p><a href="/logout">Logout</a></p>
+    {%else%}
+    <p>You have not logged in.</p>
+    <p><a href="/login">Login</a></p>
+    {%endif%}
+</body>
+</html>
