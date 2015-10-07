@@ -6,23 +6,25 @@
   </head>
   
   <body>
+    <script src="login.js"></script>
     <div id="main">
-      <table align="center" width="300" border="0" cellpadding="2" cellspaceing="0">
+      <table align="center" width="300" border="0" 
+             cellpadding="2" cellspaceing="0">
         <caption align="center"><h2>登陆</h2></caption>
-        <form action="#" method="post">
+        <form action="#" method="post" onSubmit="return demo()">
             <tr>
               <th>用户名：</th>
-              <td><input type="text" name="usrname" size="20"</td>
+              <td><input type="text" id="usrName" name="usrname" size="20"></td>
             </tr>
           
             <tr>
               <th>密码：</th>
-              <td><input type="password" name="password" size="20"</td>
+              <td><input type="password" name="password" size="20"></td>
             </tr>
             <tr>
              <td></td>
              <td>
-              <input type="submit" name="login" value="登陆">
+              <input type="submit" name="login" value="登陆" onclick="demo()">
               <input type="submit" name="register" value="注册">
              </td>
             </tr>

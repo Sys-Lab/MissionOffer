@@ -5,13 +5,14 @@
     <link rel="StyleSheet" href="registerstyle.css"/>
   </head>
   <body>
+    <script src="register.js"></script>
   	<div id="main">
   	  <table align="center" width="500" border="0" cellpadding="2" cellspaceing="0">
         <caption align="center"><h2>用户注册</h2></caption>
         <form action="#" method="post">
         <tr>
             <th>用户名：</th>
-        	<td><input type="text" name="usrname" size="20"></td>
+        	<td><input type="text" name="usrname" size="20" id="usrName"></td>
         </tr>
         <tr>
         	<th>性别：</th>
@@ -65,7 +66,7 @@
         <tr>
         	<td></td>
         	<td>
-        		<input type="submit" name="submit" value="提交">
+        		<input type="submit" name="submit" value="提交" onclick="demo()">
         		<input type="reset" name="reset" value="重置">
         	</td>
         </form>
