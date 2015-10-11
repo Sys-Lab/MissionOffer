@@ -65,8 +65,8 @@ def registerMethod(request):
     return render_to_response('registerframework.html', {})
 
 def indexMethod(request):
-    usrname = request.session.get('usrname', '')
-    return render_to_response('index.html',{'usrname':usrname})
+    # usrname = request.session.get('usrname', '')
+    return render_to_response('framework.html',{})
 
 def logoutMethod(requset):
     del requset.session['usrname']
