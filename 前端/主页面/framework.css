@@ -1,6 +1,8 @@
 <style>
      .login{}
      #boss1{
+        margin:0%;
+        padding:0%;
         position:absolute;
         top:0%;
         left:0%;
@@ -11,6 +13,8 @@
         display:inline;
       }
      #boss2{
+        margin:0%;
+        padding:0%;
         position:absolute;
         top:8px;
         left:45px;
@@ -22,6 +26,7 @@
       }
      #boss3{
         margin:0px;
+        padding:0%;
         position:absolute;
         top:8px;
         left:1146px;
@@ -32,6 +37,8 @@
         font-weight:bolder;
       }
       #boss4{
+        margin:0%;
+        padding:0%;
         position:absolute;
         top:45px;
         left:0%;
@@ -41,6 +48,7 @@
       }
       #boss5{
         margin:0px;
+        padding:0%;
         position:absolute;
         top:140px;
         left:0%;
@@ -50,6 +58,8 @@
         border-bottom:1px solid black;
       }
       #boss6{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:148px;
         left:6%;
@@ -57,6 +67,8 @@
         width:155px;
       }
       #boss7{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:58px;
         width:144px;
@@ -64,6 +76,8 @@
         left:25%;
       }
       #boss8{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:155px;
         left:76%;
@@ -72,6 +86,8 @@
         background:url(搜索框.png);
       }
       #boss91{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:165px;
         left:77.5%;
@@ -79,6 +95,8 @@
         width:185px;
       }
       #boss92{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:38px;
         width:51px;
@@ -86,6 +104,8 @@
         left:240px;
       }
       #boss10{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:250px;
         left:120px;
@@ -94,36 +114,50 @@
         background:#F4F4F4;
       }
       #boss101{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:5%;
         left:22%;
       }
       #boss102{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:17%;
         left:21%;
       }
       #boss103{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:32%;
         left:25%;
       }
       #boss104{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:46%;
         left:23%;
       }
       #boss105{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:59%;
         left:21.5%;
       }
       #boss106{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:74%;
         left:22%;
       }
       #boss11{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:49px;
         width:297px;
@@ -132,6 +166,8 @@
         left:400px;
       }
       #boss111{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:13px;
         left:45px;
@@ -142,6 +178,8 @@
         color:#979797;
       }
       #boss112{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:13px;
         left:140px;
@@ -152,6 +190,8 @@
         color:#979797;
       }
       #boss113{
+        margin:0px;
+        padding:0%;
         position:absolute;
         top:13px;
         left:220px;
@@ -162,6 +202,8 @@
         color:#979797;
       }
       #boss12{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:412px;
         width:179px;
@@ -170,6 +212,8 @@
         background:url(part3.png);
       }
       #boss121{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:18px;
         width:15px;
@@ -177,6 +221,8 @@
         left:20%;
       }
       #boss122{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:28px;
         width:100px;
@@ -187,6 +233,8 @@
         font-size:120%;
       }
       #boss123{
+        margin:0px;
+        padding:0%;
         position:absolute;
         height:50px;
         width:179px;
