@@ -21,7 +21,7 @@ def loginMethod(request):
             else:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
                 print('用户名或密码错误')
                 return HttpResponseRedirect('/login')
-    return render_to_response('Loginframework.html', {})
+    return render_to_response('login.html', {})
 
 def createNewUser(post):
     newUser = User()  # 创建新用户，加入到数据库中。
@@ -65,9 +65,13 @@ def registerMethod(request):
     return render_to_response('registerframework.html', {})
 
 def indexMethod(request):
-    # usrname = request.session.get('usrname', '')
-    return render_to_response('framework.html',{})
+    usrname = request.session.get('usrname', '')
+    return render_to_response('framework.html',{'usrname': usrname})
 
 def logoutMethod(requset):
     del requset.session['usrname']
-    return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/index')
+
+def userCenterMethod(request):
+    usrname = request.session.get('usrname', '')
+    return render_to_response('userCenter.html',{'usrname':usrname})
