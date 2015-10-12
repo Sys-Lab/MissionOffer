@@ -1,4 +1,4 @@
-<style>
+﻿<style>
      .login{}
      #boss1{
         margin:0%;
@@ -19,7 +19,7 @@
         top:8px;
         left:45px;
         height:32px;
-        width:250px;
+        width:280px;
         color:white;
         font-size:120%;
         font-weight:bolder;  
@@ -31,7 +31,7 @@
         top:8px;
         left:1146px;
         height:30px;
-        width:100px;
+        width:120px;
         font-size:120%;
         color:white;
         font-weight:bolder;
