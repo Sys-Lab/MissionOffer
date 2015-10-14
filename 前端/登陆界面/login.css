@@ -105,6 +105,13 @@
         height:43px;
         top:230px;
         left:67px;
+        font-size:;
+        font-family:"微软黑体";
+        color:white;
+        background-color:#5FF571;
+        height:43px;
+        width:294;
+        border:0px;
       }
       #register{
         position:absolute;
