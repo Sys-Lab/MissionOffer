@@ -9,7 +9,7 @@
         height:45px;
         width:100%;
         font-size:180%;
-        background:url(top.png);
+        background:url(top.png) no-repeat;
         display:inline;
       }
      #boss2{
@@ -46,7 +46,7 @@
         left:0%;
         height:95px;
         width:100%;
-        background:url(boss4.png);
+        background:url(boss4.png) no-repeat;
       }
       #boss5{
         margin:0px;
