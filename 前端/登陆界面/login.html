@@ -9,19 +9,41 @@
     </style>
   </head>
   <body>
+     <script type="text/javascript">
+      function getlength(str){
+        return str.length;
+      }
+      function demo(){
+        var a=document.getElementById("usrName").value;
+        var len=getlength(a);
+        if(a==""||len>30){
+          document.getElementById("dengluf").style.display="block";
+          document.getElementById("empty").style.display="block";
+          return false;
+        }
+      }
+
+
+    </script>
+    <div id="all">
     <div id="head"></div>
     <div id="loginpicture"></div>
     <div id="login">
       <div id="loginframework"></div>
-      <form action="#" method="post" style="height:280px;">
-          <input type="text" id="usrName" size="25">
-          <input type="password" id="passWord" size="25">
+      <form action="#" method="post" style="height:280px;" onSubmit="return demo()">
+          <input type="text" id="usrName" name="UN" size="25">
+          <input type="password" id="passWord" name="PW" size="25">
       	  <input type="checkbox" id="pw"><div id="reps">记住密码</div>
       	  <input type="checkbox" id="lg"><div id="autolo">自动登录</div>
-        <div id="sub"><input type="submit" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;">
+        <div id="sub"><input type="submit" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;" onclick="demo()">
         </div>
       </form>
       <div id="register">没有账号？请<a href="#" style="color:#5FF571;">注册</a></div>
+    </div>
+    <div id="dengluf"></div>
+    <div id="empty">用户名长度不能超过30且不能为空</div>
+    <div id="false">用户名不能含有非法字符!</div>
+    <div id="denglut"></div>
     </div>
   </body>
 </html>

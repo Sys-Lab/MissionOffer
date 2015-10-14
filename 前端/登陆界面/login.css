@@ -1,8 +1,14 @@
+      #all{
+        margin:0;
+        width:1366px;
+        position:relative;
+        display:block;
+      }
       #head{
       	position:absolute;
       	margin:0%;
         padding:0%;
-        width:100%;
+        width:1366px;
         height:95px;
         top:0px;
         left:0px;
@@ -15,7 +21,7 @@
       	width:497px;
       	height:490px;
       	top:140px;
-      	left:290px;
+      	left:220px;
       	background:url("picture.png");
       }
       #login{
@@ -25,7 +31,7 @@
       	width:369px;
         height:347px;
         top:190px;
-        left:787px;
+        left:717px;
         
       }
       #loginframework{
@@ -128,4 +134,56 @@
         left:257px;
         font-weight:bold;
         font-size:80%;
+      }
+      #dengluf{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:30px;
+        top:223px;
+        left:1080px;
+        background:url(1.jpg);
+        display:none;
+      }
+      #denglut{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:30px;
+        top:223px;
+        left:1080px;
+        background:url(2.jpg);
+        display:none;
+      }
+      #empty{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:250px;
+        top:223px;
+        left:1110px;
+        color:red;
+        font-family:"微软黑体";
+        font-weight:bold;
+        text-align:center;
+        line-height:35px;
+        display:none;
+      }
+      #false{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:250px;
+        top:223px;
+        left:1110px;
+        color:red;
+        font-family:"微软黑体";
+        font-weight:bold;
+        text-align:center;
+        line-height:35px;
+        display:none;
       }
