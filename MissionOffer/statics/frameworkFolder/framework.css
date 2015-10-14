@@ -19,7 +19,7 @@
         top:8px;
         left:45px;
         height:32px;
-        width:250px;
+        width:280px;
         color:white;
         font-size:120%;
         font-weight:bolder;  
@@ -55,7 +55,7 @@
         height:80px;
         width:1366px;
         background:white;
-        border-bottom:1px solid black;
+        border-bottom:1px solid #ccc;
       }
       #boss6{
         margin:0px;
@@ -90,7 +90,7 @@
         padding:0%;
         position:absolute;
         top:165px;
-        left:77.5%;
+        left:77%;
         height:32px;
         width:185px;
       }
@@ -99,9 +99,9 @@
         padding:0%;
         position:absolute;
         height:38px;
-        width:51px;
-        top:4px;
-        left:240px;
+        width:45px;
+        top:6px;
+        left:238px;
       }
       #boss10{
         margin:0px;
@@ -162,7 +162,7 @@
         height:49px;
         width:297px;
         background:url(choice.png);
-        top:260px;
+        top:250px;
         left:400px;
       }
       #boss111{
@@ -207,7 +207,7 @@
         position:absolute;
         height:412px;
         width:179px;
-        top:260px;
+        top:250px;
         left:1050px;
         background:url(part3.png);
       }
