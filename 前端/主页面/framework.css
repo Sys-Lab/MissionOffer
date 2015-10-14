@@ -1,5 +1,11 @@
 ﻿<style>
      .login{}
+     #all{
+        display:block;
+        position:relative;
+        margin:0;
+        width:1366px;
+     }
      #boss1{
         margin:0%;
         padding:0%;
@@ -7,7 +13,7 @@
         top:0%;
         left:0%;
         height:45px;
-        width:100%;
+        width:1366px;
         font-size:180%;
         background:url(top.png) no-repeat;
         display:inline;
@@ -45,7 +51,7 @@
         top:45px;
         left:0%;
         height:95px;
-        width:100%;
+        width:1366px;
         background:url(boss4.png) no-repeat;
       }
       #boss5{
@@ -55,7 +61,7 @@
         top:140px;
         left:0%;
         height:80px;
-        width:100%;
+        width:1366px;
         background:white;
         border-bottom:1px solid black;
       }
