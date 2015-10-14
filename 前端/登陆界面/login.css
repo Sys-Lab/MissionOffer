@@ -67,9 +67,9 @@
       	position:absolute;
       	margin:0%;
       	padding:0%;
-      	width:20px;
-      	height:20px;
-      	top:170px;
+      	width:18px;
+      	height:18px;
+      	top:173px;
       	left:188px;
       	font-size:125%;
       }
@@ -77,9 +77,9 @@
         position:absolute;
         margin:0%;
         padding:0%;
-        width:20px;
-        height:20px;
-        top:170px;
+        width:18px;
+        height:18px;
+        top:173px;
         left:278px;
         font-size:125%;
       }
@@ -89,13 +89,15 @@
         width:70px;
         top:170px;
         left:208px;
+        font-family:"微软雅黑";
       }
       #autolo{
-         position:absolute;
+        position:absolute;
         height:20px;
         width:70px;
         top:170px;
         left:298px;
+        font-family:"微软雅黑";
       }
       #sub{
         position:absolute;
@@ -105,7 +107,6 @@
         height:43px;
         top:230px;
         left:67px;
-        font-size:;
         font-family:"微软黑体";
         color:white;
         background-color:#5FF571;
