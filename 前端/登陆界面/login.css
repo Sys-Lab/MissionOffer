@@ -2,7 +2,7 @@
       	position:absolute;
       	margin:0%;
         padding:0%;
-        width:1366px;
+        width:100%;
         height:95px;
         top:0px;
         left:0px;
@@ -46,10 +46,12 @@
       	width:275px;
       	top:29px;
       	left:76px;
-      	font-size:30px;
+      	font-size:20px;
         border:none;
         height:38px;
         outline:none;
+        font-family:"微软雅黑";
+        font-weight:none;
       }
       #passWord{
       	position:absolute;
@@ -59,9 +61,11 @@
       	width:275px;
       	top:98px;
       	left:76px;
-        font-size:30px;
+        font-size:20px;
         border:none;
         outline:none;
+        font-family:"微软雅黑";
+        font-weight:none;
       }
       #pw{
       	position:absolute;

@@ -7,7 +7,7 @@
         top:0%;
         left:0%;
         height:45px;
-        width:1366px;
+        width:100%;
         font-size:180%;
         background:url(top.png);
         display:inline;
@@ -45,7 +45,7 @@
         top:45px;
         left:0%;
         height:95px;
-        width:1366px;
+        width:100%;
         background:url(boss4.png);
       }
       #boss5{
@@ -55,7 +55,7 @@
         top:140px;
         left:0%;
         height:80px;
-        width:1366px;
+        width:100%;
         background:white;
         border-bottom:1px solid black;
       }
