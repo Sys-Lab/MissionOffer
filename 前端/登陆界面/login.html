@@ -14,16 +14,22 @@
         return str.length;
       }
       function demo(){
+        var re=/[^\w\u4e00-\u9fa5]/g;
         var a=document.getElementById("usrName").value;
         var len=getlength(a);
         if(a==""||len>30){
           document.getElementById("dengluf").style.display="block";
           document.getElementById("empty").style.display="block";
+          document.getElementById("false").style.display="none";
           return false;
         }
+        else if(re.test(a)){
+          document.getElementById("dengluf").style.display="block";
+          document.getElementById("false").style.display="block";
+          document.getElementById("empty").style.display="none";
+          return false;
+        };
       }
-
-
     </script>
     <div id="all">
     <div id="head"></div>
