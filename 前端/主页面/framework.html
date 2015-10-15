@@ -9,6 +9,7 @@
     </style>
   </head>
   <body>
+    <script src="framework.js"></script>
     <div id="all">
   	<div id="boss1"></div>
     <div id="boss2">Welcome to MissionOffer</div>
@@ -34,16 +35,16 @@
     </form>
     <div id="boss10">
       <div id="boss101"><img src="all_pressed.png"></div>
-      <div id="boss102"><a href="#"><img src="lost_pressed.png"></a></div>
-      <div id="boss103"><a href="#"><img src="dining.png"></a></div>
-      <div id="boss104"><a href="#"><img src="super.png"></a></div>
-      <div id="boss105"><a href="#"><img src="print.png"></a></div>
-      <div id="boss106"><a href="#"><img src="out.png"></a></div>
+      <div id="boss102"><a href="#" onclick="lost_p()"><img src="lost_pressed.png" id="boss1022"></a></div>
+      <div id="boss103"><a href="#" onclick="ding_p()"><img src="dining.png" id="boss1033"></a></div>
+      <div id="boss104"><a href="#" onclick="super_p()"><img src="super.png" id="boss1044"></a></div>
+      <div id="boss105"><a href="#" onclick="print_p()"><img src="print.png" id="boss1055"></a></div>
+      <div id="boss106"><a href="#" onclick="out_p()"><img src="out.png" id="boss1066"></a></div>
     </div>
     <div id="boss11">
-      <div id="boss111"><a href="#" style="color:#979797;">全部</a></div>
-      <div id="boss112"><a href="#" style="color:#979797;">进行中</a></div>
-      <div id="boss113"><a href="#" style="color:#979797;">已完成</a></div>
+      <div id="boss111"><a href="#" id="all_a" onClick="all_demo()" style="color:#979797;">全部</a></div>
+      <div id="boss112"><a href="#" id="ing_a" onClick="ing_demo()" style="color:#979797;">进行中</a></div>
+      <div id="boss113"><a href="#" id="done_a" onClick="done_demo()" style="color:#979797;">已完成</a></div>
     </div>
     <div id="boss12">
       <div id="boss121"><img src="ranking.png"></div>

@@ -135,8 +135,11 @@
         margin:0px;
         padding:0%;
         position:absolute;
+        width:113px;
+        height:26px;
         top:17%;
         left:21%;
+        
       }
       #boss103{
         margin:0px;
@@ -171,7 +174,7 @@
         padding:0%;
         position:absolute;
         height:49px;
-        width:297px;
+        width:347px;
         background:url(choice.png);
         top:250px;
         left:400px;
@@ -187,13 +190,14 @@
         font-size:120%;
         font-family:"微软雅黑";
         color:#979797;
+
       }
       #boss112{
         margin:0px;
         padding:0%;
         position:absolute;
         top:13px;
-        left:140px;
+        left:150px;
         height:33px;
         width:59px;
         font-size:120%;
@@ -205,7 +209,7 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:220px;
+        left:250px;
         height:33px;
         width:58px;
         font-size:120%;
