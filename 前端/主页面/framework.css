@@ -73,6 +73,7 @@
         left:120px;
         height:60px;
         width:155px;
+        border:0px;
       }
       #boss7{
         margin:0px;
@@ -97,10 +98,12 @@
         margin:0px;
         padding:0%;
         position:absolute;
-        top:165px;
-        left:77.5%;
+        top:10px;
+        left:5%;
         height:32px;
-        width:185px;
+        width:200px;
+        font-family:"微软雅黑";
+        color:#979797;
       }
       #boss92{
         margin:0%;
@@ -109,10 +112,11 @@
         width:51px;
         height:37px;
         top:5px;
-        left:230px;
+        left:237px;
         background-image:url(boss54.png);
         border:0px;
         outline:none;
+        cursor:pointer;
       }
       #boss10{
         margin:0px;
