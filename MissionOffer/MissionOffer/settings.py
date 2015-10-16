@@ -107,3 +107,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_PATH= os.path.join(os.path.dirname(__file__), '../statics').replace('\\','/')
+
+''' # 用于email发送
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER='xxxxxx@qq.com'
+EMAIL_HOST_PASSWORD='xxxxx'
+'''

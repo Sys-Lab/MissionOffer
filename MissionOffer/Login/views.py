@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from Login.forms import *
 from Login.models import User
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 
 def loginMethod(request):
     if request.method == 'POST':
@@ -60,8 +61,11 @@ def registerMethod(request):
             if len(findList) > 0:  # 邮箱已存在
                 print('邮箱已存在')
                 return render_to_response('registerframework.html', {})
+
             createNewUser(request.POST)
-            return render_to_response('afterRegister.html',request.POST)
+            request.session['usrname'] = request.POST['usrname']
+            return HttpResponseRedirect('/index')
+            # return render_to_response('afterRegister.html',request.POST)
     return render_to_response('registerframework.html', {})
 
 def indexMethod(request):

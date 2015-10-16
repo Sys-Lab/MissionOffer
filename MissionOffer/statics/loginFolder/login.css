@@ -1,3 +1,9 @@
+      #all{
+        margin:0;
+        width:1366px;
+        position:relative;
+        display:block;
+      }
       #head{
       	position:absolute;
       	margin:0%;
@@ -15,7 +21,7 @@
       	width:497px;
       	height:490px;
       	top:140px;
-      	left:290px;
+      	left:220px;
       	background:url("picture.png");
       }
       #login{
@@ -25,7 +31,7 @@
       	width:369px;
         height:347px;
         top:190px;
-        left:787px;
+        left:717px;
         
       }
       #loginframework{
@@ -46,13 +52,12 @@
       	width:275px;
       	top:29px;
       	left:76px;
-      	font-size:15px;
+      	font-size:20px;
         border:none;
         height:38px;
         outline:none;
+        font-family:"微软雅黑";
         font-weight:none;
-        font-family:微软雅黒;
-        color:rgb(150,150,150);
       }
       #passWord{
       	position:absolute;
@@ -62,19 +67,19 @@
       	width:275px;
       	top:98px;
       	left:76px;
-        font-size:15px;
+        font-size:20px;
         border:none;
         outline:none;
+        font-family:"微软雅黑";
         font-weight:none;
-        font-family:微软雅黒;
       }
       #pw{
       	position:absolute;
       	margin:0%;
       	padding:0%;
-      	width:20px;
-      	height:20px;
-      	top:170px;
+      	width:18px;
+      	height:18px;
+      	top:173px;
       	left:188px;
       	font-size:125%;
       }
@@ -82,9 +87,9 @@
         position:absolute;
         margin:0%;
         padding:0%;
-        width:20px;
-        height:20px;
-        top:170px;
+        width:18px;
+        height:18px;
+        top:173px;
         left:278px;
         font-size:125%;
       }
@@ -94,13 +99,15 @@
         width:70px;
         top:170px;
         left:208px;
+        font-family:"微软雅黑";
       }
       #autolo{
-         position:absolute;
+        position:absolute;
         height:20px;
         width:70px;
         top:170px;
         left:298px;
+        font-family:"微软雅黑";
       }
       #sub{
         position:absolute;
@@ -110,6 +117,12 @@
         height:43px;
         top:230px;
         left:67px;
+        font-family:"微软黑体";
+        color:white;
+        background-color:#5FF571;
+        height:43px;
+        width:294;
+        border:0px;
       }
       #register{
         position:absolute;
@@ -121,4 +134,56 @@
         left:257px;
         font-weight:bold;
         font-size:80%;
+      }
+      #dengluf{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:30px;
+        top:223px;
+        left:1080px;
+        background:url(1.jpg);
+        display:none;
+      }
+      #denglut{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:30px;
+        top:223px;
+        left:1080px;
+        background:url(2.jpg);
+        display:none;
+      }
+      #empty{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:250px;
+        top:223px;
+        left:1110px;
+        color:red;
+        font-family:"微软黑体";
+        font-weight:bold;
+        text-align:center;
+        line-height:35px;
+        display:none;
+      }
+      #false{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:250px;
+        top:223px;
+        left:1110px;
+        color:red;
+        font-family:"微软黑体";
+        font-weight:bold;
+        text-align:center;
+        line-height:35px;
+        display:none;
       }

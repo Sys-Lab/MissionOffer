@@ -1,5 +1,11 @@
-<style>
+﻿<style>
      .login{}
+     #all{
+        display:block;
+        position:relative;
+        margin:0;
+        width:1366px;
+     }
      #boss1{
         margin:0%;
         padding:0%;
@@ -9,7 +15,7 @@
         height:45px;
         width:1366px;
         font-size:180%;
-        background:#67C965;
+        background:url(top.png) no-repeat;
         display:inline;
       }
      #boss2{
@@ -22,19 +28,21 @@
         width:280px;
         color:white;
         font-size:120%;
-        font-weight:bolder;  
+        font-weight:bolder;
+        font-family:"微软雅黑";  
       }
      #boss3{
         margin:0px;
         padding:0%;
         position:absolute;
         top:8px;
-        left:1146px;
+        left:1070px;
         height:30px;
-        width:100px;
+        width:250px;
         font-size:120%;
         color:white;
         font-weight:bolder;
+        font-family:"微软雅黑";
       }
       #boss4{
         margin:0%;
@@ -44,7 +52,7 @@
         left:0%;
         height:95px;
         width:1366px;
-        background:url(boss4.png);
+        background:url(boss4.png) no-repeat;
       }
       #boss5{
         margin:0px;
@@ -55,16 +63,17 @@
         height:80px;
         width:1366px;
         background:white;
-        border-bottom:1px solid #ccc;
+        border-bottom:1px solid black;
       }
       #boss6{
         margin:0px;
         padding:0%;
         position:absolute;
         top:148px;
-        left:6%;
+        left:120px;
         height:60px;
         width:155px;
+        border:0px;
       }
       #boss7{
         margin:0px;
@@ -73,14 +82,14 @@
         height:58px;
         width:144px;
         top:150px;
-        left:25%;
+        left:350px;
       }
       #boss8{
         margin:0px;
         padding:0%;
         position:absolute;
         top:155px;
-        left:76%;
+        left:1000px;
         height:46px;
         width:294px;
         background:url(搜索框.png);
@@ -89,19 +98,25 @@
         margin:0px;
         padding:0%;
         position:absolute;
-        top:165px;
-        left:77%;
+        top:10px;
+        left:5%;
         height:32px;
-        width:185px;
+        width:200px;
+        font-family:"微软雅黑";
+        color:#979797;
       }
       #boss92{
-        margin:0px;
+        margin:0%;
         padding:0%;
         position:absolute;
-        height:38px;
-        width:45px;
-        top:6px;
-        left:238px;
+        width:51px;
+        height:37px;
+        top:5px;
+        left:237px;
+        background-image:url(boss54.png);
+        border:0px;
+        outline:none;
+        cursor:pointer;
       }
       #boss10{
         margin:0px;
@@ -111,7 +126,7 @@
         left:120px;
         height:277px;
         width:244px;
-        background:#F4F4F4;
+        background:url(left1.png);
       }
       #boss101{
         margin:0px;
@@ -124,8 +139,11 @@
         margin:0px;
         padding:0%;
         position:absolute;
+        width:113px;
+        height:26px;
         top:17%;
         left:21%;
+        
       }
       #boss103{
         margin:0px;
@@ -160,7 +178,7 @@
         padding:0%;
         position:absolute;
         height:49px;
-        width:297px;
+        width:347px;
         background:url(choice.png);
         top:250px;
         left:400px;
@@ -176,13 +194,14 @@
         font-size:120%;
         font-family:"微软雅黑";
         color:#979797;
+
       }
       #boss112{
         margin:0px;
         padding:0%;
         position:absolute;
         top:13px;
-        left:140px;
+        left:150px;
         height:33px;
         width:59px;
         font-size:120%;
@@ -194,7 +213,7 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:220px;
+        left:250px;
         height:33px;
         width:58px;
         font-size:120%;
