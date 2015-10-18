@@ -177,8 +177,8 @@
         margin:0px;
         padding:0%;
         position:absolute;
-        height:49px;
-        width:347px;
+        height:52px;
+        width:472px;
         background:url(choice.png);
         top:250px;
         left:400px;
@@ -201,7 +201,7 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:150px;
+        left:158px;
         height:33px;
         width:59px;
         font-size:120%;
@@ -213,7 +213,19 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:250px;
+        left:268px;
+        height:33px;
+        width:58px;
+        font-size:120%;
+        font-family:"微软雅黑";
+        color:#979797;
+      }
+      #boss114{
+        margin:0px;
+        padding:0%;
+        position:absolute;
+        top:13px;
+        left:375px;
         height:33px;
         width:58px;
         font-size:120%;
