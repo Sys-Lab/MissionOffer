@@ -7,30 +7,10 @@
       body{margin:0%;}
       a{text-decoration:none;}
     </style>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="login.js"></script>
   </head>
   <body>
-     <script type="text/javascript">
-      function getlength(str){
-        return str.length;
-      }
-      function demo(){
-        var re=/[^\w\u4e00-\u9fa5]/g;
-        var a=document.getElementById("usrName").value;
-        var len=getlength(a);
-        if(a==""||len>30){
-          document.getElementById("dengluf").style.display="block";
-          document.getElementById("empty").style.display="block";
-          document.getElementById("false").style.display="none";
-          return false;
-        }
-        else if(re.test(a)){
-          document.getElementById("dengluf").style.display="block";
-          document.getElementById("false").style.display="block";
-          document.getElementById("empty").style.display="none";
-          return false;
-        };
-      }
-    </script>
     <div id="all">
     <div id="head"></div>
     <div id="loginpicture"></div>
@@ -41,15 +21,16 @@
           <input type="password" id="passWord" name="PW" size="25">
       	  <input type="checkbox" id="pw"><div id="reps">记住密码</div>
       	  <input type="checkbox" id="lg"><div id="autolo">自动登录</div>
-        <div id="sub"><input type="submit" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;" onclick="demo()">
+        <div id="sub"><input type="submit" id="sbm" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;" onclick="demo()">
         </div>
       </form>
       <div id="register">没有账号？请<a href="#" style="color:#5FF571;">注册</a></div>
     </div>
     <div id="dengluf"></div>
     <div id="empty">用户名长度不能超过30且不能为空</div>
-    <div id="false">用户名不能含有非法字符!</div>
+    <div id="usrname_false">用户名不能含有非法字符!</div>
     <div id="denglut"></div>
+    <div id="password_false">密码不正确!</div>
     </div>
   </body>
 </html>
