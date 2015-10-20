@@ -22,18 +22,18 @@
  $(document).ready(function(){
    $("#sbm").click(function(){
      $.ajax({
-      type:"GET",
+      type:"POST",
       url:"",
-      data.{
-        'UN':$("usrName").val(),
-        'PW':$("passWord").val()
+      data{
+        'UN':$("#usrName").val(),
+        'PW':$("#passWord").val()
       }
       dataType:"json",
       success:function(data){
         if(data.success){}
         else{
-          $("password_false").css('display','block');
-          $("denglut").css('display','block');
+          $("#password_false").css('display','block');
+          $("#denglut").css('display','block');
         }
       },
       error:function(data){
