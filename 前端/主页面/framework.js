@@ -22,7 +22,21 @@
       document.getElementById("ing_a").style.color="#979797";
       document.getElementById("get_a").style.color="#64C864";
     }
+    function all_p(){
+      document.getElementById("boss1011").src="all_pressed.png";
+      document.getElementById("boss1022").src="lost_pressed.png";
+      document.getElementById("boss1033").src="dining.png";
+      document.getElementById("boss1044").src="super.png";
+      document.getElementById("boss1055").src="print.png";
+      document.getElementById("boss1066").src="out.png";
+      document.getElementById("boss102").style.left="21%";
+      document.getElementById("boss103").style.left="25%";
+      document.getElementById("boss104").style.left="23%";
+      document.getElementById("boss105").style.left="21.5%";
+      document.getElementById("boss106").style.left="22%";
+    }
     function lost_p(){
+      document.getElementById("boss1011").src="all.png";
       document.getElementById("boss1022").src="lost1_pressed.png";
       document.getElementById("boss1033").src="dining.png";
       document.getElementById("boss1044").src="super.png";
@@ -35,6 +49,7 @@
       document.getElementById("boss106").style.left="22%";
     }
     function ding_p(){
+      document.getElementById("boss1011").src="all.png";
       document.getElementById("boss1022").src="lost_pressed.png";
       document.getElementById("boss1033").src="dining_pressed.png";
       document.getElementById("boss1044").src="super.png";
@@ -47,6 +62,7 @@
       document.getElementById("boss106").style.left="22%";
     }
     function super_p(){
+      document.getElementById("boss1011").src="all.png";
       document.getElementById("boss1022").src="lost_pressed.png";
       document.getElementById("boss1033").src="dining.png";
       document.getElementById("boss1044").src="super_pressed.png";
@@ -59,6 +75,7 @@
       document.getElementById("boss106").style.left="22%";
     }
     function print_p(){
+      document.getElementById("boss1011").src="all.png";
       document.getElementById("boss1022").src="lost_pressed.png";
       document.getElementById("boss1033").src="dining.png";
       document.getElementById("boss1044").src="super.png";
@@ -71,6 +88,7 @@
       document.getElementById("boss106").style.left="22%";
     }
     function out_p(){
+      document.getElementById("boss1011").src="all.png";
       document.getElementById("boss1022").src="lost_pressed.png";
       document.getElementById("boss1033").src="dining.png";
       document.getElementById("boss1044").src="super.png";
