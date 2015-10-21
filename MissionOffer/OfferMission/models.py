@@ -18,6 +18,7 @@ class Mission(models.Model):
     def __str__(self):
         return self.title
 
+
 class Attachment(models.Model):  # 任务附件
-    files = models.FileField()  # 文件
-    belongTo = models.ForeignKey(Mission)  # 所属任务
+    files = models.FileField(upload_to='uploadFiles/Attachments')  # 文件
+    belongTo = models.ForeignKey(Mission,null=True)  # 所属任务

@@ -1,9 +1,11 @@
+import os
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from OfferMission.models import *
+from django.core.files import File
 
-def createMission(post, User):
+def createMissionMethod(post, user):
     newMission =  Mission()
     newMission.title = post['title']
     newMission.context = post['context']
@@ -12,12 +14,26 @@ def createMission(post, User):
     newMission.reward = post['reward']
     newMission.fine = post['fine']
     newMission.deadline = post['deadline']
-    newMission.employer = User
+    newMission.employer = user
     newMission.save()
     return newMission
 
-def createAttachment():
+def uploadFileMethod(request):
+    if  (request.method == 'POST'):
+        files = request.FILES.getlist('multipleFileUpload')
+        print (len(files))
+        for f in files:
+            newAttachment = Attachment()
+            newAttachment.files = f
+            newAttachment.save()
+
+        return HttpResponse('success')
+    return render_to_response('file.html')
+
+
+def createAttachmentMethod(request, mission):
     pass
+
 
 def offerMethod(request):
     usrname = request.session.get('usrname', None)

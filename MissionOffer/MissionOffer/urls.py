@@ -18,14 +18,22 @@ from django.contrib import admin
 from django.conf import settings
 
 urlpatterns = [
+    # Admin
     url(r'^admin/', include(admin.site.urls)),
+
+    # Login
     url(r'^$','Login.views.indexMethod',name=''),
     url(r'^register/$','Login.views.registerMethod',name='register'),
     url(r'^login/$','Login.views.loginMethod',name='login'),
     url(r'^index/$','Login.views.indexMethod',name='index'),
     url(r'^logout/$','Login.views.logoutMethod',name='logout'),
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
+    # url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
+
+    # OfferMission
     url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),
-    url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
+    url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),
+
+    # statics
     url(r'^statics/(?P<path>.*)', 'django.views.static.serve',{'document_root':settings.STATIC_PATH}),
 ]
