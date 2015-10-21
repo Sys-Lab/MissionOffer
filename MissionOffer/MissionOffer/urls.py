@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^logout/$','Login.views.logoutMethod',name='logout'),
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
     url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),
+    url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
     url(r'^statics/(?P<path>.*)', 'django.views.static.serve',{'document_root':settings.STATIC_PATH}),
 ]

@@ -15,7 +15,7 @@
         height:45px;
         width:1366px;
         font-size:180%;
-        background:url(top.png) no-repeat;
+        background:url(/statics/frameworkFolder/top.png) no-repeat;
         display:inline;
       }
      #boss2{
@@ -52,7 +52,7 @@
         left:0%;
         height:95px;
         width:1366px;
-        background:url(boss4.png) no-repeat;
+        background:url(/statics/frameworkFolder/boss4.png) no-repeat;
       }
       #boss5{
         margin:0px;
@@ -92,7 +92,7 @@
         left:1000px;
         height:46px;
         width:294px;
-        background:url(搜索框.png);
+        background:url(/statics/frameworkFolder/搜索框.png);
       }
       #boss91{
         margin:0px;
@@ -113,7 +113,7 @@
         height:37px;
         top:5px;
         left:237px;
-        background-image:url(boss54.png);
+        background-image:url(/statics/frameworkFolder/boss54.png);
         border:0px;
         outline:none;
         cursor:pointer;
@@ -126,7 +126,7 @@
         left:120px;
         height:277px;
         width:244px;
-        background:url(left1.png);
+        background:url(/statics/frameworkFolder/left1.png);
       }
       #boss101{
         margin:0px;
@@ -177,9 +177,9 @@
         margin:0px;
         padding:0%;
         position:absolute;
-        height:49px;
-        width:347px;
-        background:url(choice.png);
+        height:52px;
+        width:472px;
+        background:url(/statics/frameworkFolder/choice.png);
         top:250px;
         left:400px;
       }
@@ -201,7 +201,7 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:150px;
+        left:158px;
         height:33px;
         width:59px;
         font-size:120%;
@@ -213,7 +213,19 @@
         padding:0%;
         position:absolute;
         top:13px;
-        left:250px;
+        left:268px;
+        height:33px;
+        width:58px;
+        font-size:120%;
+        font-family:"微软雅黑";
+        color:#979797;
+      }
+      #boss114{
+        margin:0px;
+        padding:0%;
+        position:absolute;
+        top:13px;
+        left:375px;
         height:33px;
         width:58px;
         font-size:120%;
@@ -228,7 +240,7 @@
         width:179px;
         top:250px;
         left:1050px;
-        background:url(part3.png);
+        background:url(/statics/frameworkFolder/part3.png);
       }
       #boss121{
         margin:0px;

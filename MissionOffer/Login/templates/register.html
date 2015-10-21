@@ -1,0 +1,56 @@
+<html>
+  <head>
+  	<title>register</title>
+  	<meta charset="utf-8">
+    <link rel="StyleSheet" href="/statics/registerFolder/register.css" type="text/css">
+    <script src="/statics/registerFolder/register.js"></script>
+  </head>
+  <body>
+  	<div id="top"></div>
+  	<div id="backimage1"></div>
+  	<div id="backimage2"></div>
+    <form method="post" action="#">
+  	 <div id="input1"></div>
+     <div id="input1_p">*</div>
+     <div id="input1_explain">请输入有效的邮箱地址</div>
+  	 <div id="input2"></div>
+     <div id="input2_p">*</div>
+     <div id="input2_explain">长度为6-16个字符，不能包含空格</div>
+  	 <div id="input3"></div>
+     <div id="input3_p">*</div>
+     <div id="input3_explain"></div>
+  	 <div id="input4"></div>
+     <div id="input4_p">*</div>
+     <div id="input4_explain">6-16个字符,不包含空格和非法字符</div>
+  	 <div id="input5"></div>
+     <div id="input5_p">*</div>
+     <div id="input5_explain">身份识别</div>
+  	 <div id="input6"></div>
+     <div id="input6_p">*</div>
+     <div id="input6_explain">便于交易联系</div>
+  	 <div id="biginput"></div>
+     <a id="biginput_explain" style="color:red;">*</a>
+  	 <input type="text" name="usrname" id="uN" onfocus="input1()" onblur="input1_judge()">
+  	 <input type="password" name="password" id="pW" onfocus="input2()"
+     onblur="input2_judge()">
+  	 <input type="password" name="repassword" id="rP"
+     onfocus="input3()" onblur="input3_judge()">
+  	 <input type="text" name="nickname" id="nN" onfocus="input4()"
+     onblur="input4_judge()">
+  	 <input type="text" name="student_number" id="sN" 
+     onfocus="input5()" onblur="input5_judge()">
+  	 <input type="text" name="phone_number" id="pN" onfocus="input6()"
+     onblur="input6_judge()">
+     <textarea rows="8" cols="30" name="introduce" id="it" value="姓名、班级、专业等、不少于10个字"></textarea>
+     <div id="read" name="rd" onclick="demo()"></div>
+     <div id="man" name="man" onclick="demo1()"></div>
+     <div id="woman" name="man" onclick="demo2()"></div>
+     <div id="keepsecret" name="ks" onclick="demo3()"></div>
+     <div id="manf">男</div>
+     <div id="womanf">女</div>
+     <div id="keepsecretf">保密</div>
+     <div id="detail">我已阅读并同意相关服务条款和隐私政策</div>
+     <div type="submit" id="sb" name="submit" value="">
+    </form>
+  </body>
+</html>

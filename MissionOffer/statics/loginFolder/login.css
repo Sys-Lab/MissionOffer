@@ -12,7 +12,7 @@
         height:95px;
         top:0px;
         left:0px;
-        background:url("head.png");
+        background:url(/statics/loginFolder/head.png);
       }
       #loginpicture{
       	position:absolute;
@@ -22,7 +22,7 @@
       	height:490px;
       	top:140px;
       	left:220px;
-      	background:url("picture.png");
+      	background:url(/statics/loginFolder/picture.png);
       }
       #login{
       	position:absolute;
@@ -42,7 +42,7 @@
         height:163px;
         top:0px;
         left:0px;
-        background:url("login.png");
+        background:url(/statics/loginFolder/login.png);
       }
       #usrName{
       	position:absolute;
@@ -143,7 +143,7 @@
         width:30px;
         top:223px;
         left:1080px;
-        background:url(1.jpg);
+        background:url(/statics/loginFolder/1.jpg);
         display:none;
       }
       #denglut{
@@ -152,9 +152,9 @@
         padding:0%;
         height:30px;
         width:30px;
-        top:223px;
+        top:295px;
         left:1080px;
-        background:url(2.jpg);
+        background:url(/statics/loginFolder/1.jpg);
         display:none;
       }
       #empty{
@@ -172,7 +172,7 @@
         line-height:35px;
         display:none;
       }
-      #false{
+      #usrname_false{
         position:absolute;
         margin:0%;
         padding:0%;
@@ -180,6 +180,21 @@
         width:250px;
         top:223px;
         left:1110px;
+        color:red;
+        font-family:"微软黑体";
+        font-weight:bold;
+        text-align:center;
+        line-height:35px;
+        display:none;
+      }
+      #password_false{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        height:30px;
+        width:200px;
+        top:295px;
+        left:1120px;
         color:red;
         font-family:"微软黑体";
         font-weight:bold;
