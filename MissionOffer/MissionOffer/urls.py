@@ -33,6 +33,7 @@ urlpatterns = [
     # OfferMission
     url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),
     url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),
+    url(r'^downloadFile/$','OfferMission.views.downloadFileMethod',name='downloadFileMethod'),
 
     # statics
     url(r'^statics/(?P<path>.*)', 'django.views.static.serve',{'document_root':settings.STATIC_PATH}),

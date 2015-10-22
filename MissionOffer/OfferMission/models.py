@@ -1,6 +1,7 @@
 from django.db import models
 from Login.models import User
 
+
 class Mission(models.Model):
     statusChoices = (('0', u'待接收'),('1', u'进行中'),('2', u'已完成'))
     typeChoices = (('0', u'寻找失物'),('1', u'食堂带饭'),('2', u'超市购物'),('3',u'文印中心'),('4',(u'校外任务')))
@@ -18,7 +19,14 @@ class Mission(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['-offerTime']
 
-class Attachment(models.Model):  # 任务附件
+
+class Attachment(models.Model):  # 任务附件，感觉需要一个字段存原始文件名，待实现
+    originName = models.CharField(max_length=256,null=True)  # 原始文件名
     files = models.FileField(upload_to='uploadFiles/Attachments')  # 文件
     belongTo = models.ForeignKey(Mission,null=True)  # 所属任务
+
+    def __str__(self):
+        return self.files.name
