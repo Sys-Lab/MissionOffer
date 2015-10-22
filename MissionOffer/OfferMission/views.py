@@ -42,10 +42,19 @@ def uploadFileMethod(request):  # 上传文件
 
 def createAttachmentMethod(request, mission):  # 整合创建附件
     if  (request.method == 'POST'):
-        newAttachment = uploadFileMethod(request)
-        if newAttachment:
-            newAttachment.belongTo = mission
-            newAttachment.save()
+        try:
+            files = request.FILES.getlist('multipleFileUpload')
+            print (len(files))
+            for f in files:
+                print (f.name)
+                newAttachment = Attachment()
+                newAttachment.files = f
+                newAttachment.originName = f.name
+                newAttachment.belongTo = mission
+                newAttachment.save()
+            return newAttachment
+        except:
+            return None
         # return newAttachment
 
 def offerMethod(request):  # 发布任务，这个方法实现整个任务的发布功能

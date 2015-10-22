@@ -17,7 +17,7 @@ class Mission(models.Model):
     employee = models.ForeignKey(User, related_name='missionEmployee',null=True)  # 雇员，即任务接受人
 
     def __str__(self):
-        return self.title
+        return str(self.id) +'-'+ self.title
 
     class Meta:
         ordering = ['-offerTime']
