@@ -1,7 +1,8 @@
  function getlength(str){
         return str.length;
       }
-      function demo(){
+ document.getElementById("sbm").onclick=function(){
+        var isValidate=false;
         var re=/[^\w\u4e00-\u9fa5]/g;
         var a=document.getElementById("usrName").value;
         var len=getlength(a);
@@ -9,36 +10,29 @@
           document.getElementById("dengluf").style.display="block";
           document.getElementById("empty").style.display="block";
           document.getElementById("usrname_false").style.display="none";
-          return false;
+          return;
         }
         else if(re.test(a)){
           document.getElementById("dengluf").style.display="block";
           document.getElementById("false").style.display="block";
           document.getElementById("empty").style.display="none";
-          return false;
-        };
-      }
-
- $(document).ready(function(){
-   $("#sbm").click(function(){
-     $.ajax({
-      type:"POST",
-      url:"",
-      data{
-        'UN':$("#usrName").val(),
-        'PW':$("#passWord").val()
-      }
-      dataType:"json",
-      success:function(data){
-        if(data.success){}
-        else{
-          $("#password_false").css('display','block');
-          $("#denglut").css('display','block');
+          return;
         }
-      },
-      error:function(data){
-        alert("错误"+jqXHR.status);
+        else{
+          isValidate=true;
+        }
+
+        if(isValidate){
+          $.post('', {
+            'username' : document.getElementById('UN').value,
+            'password' : document.getElementById('PW').value
+            }, function(user) {
+              console.log(user);
+              if (user) {
+                location = '';
+              } else {
+                document.getElementById("password_false").style.display="block";
+              }
+          });
+        }
       }
-     })；
-   });
- });
