@@ -5,23 +5,28 @@ from django.http import HttpResponse,HttpResponseRedirect
 from OfferMission.models import *
 from django.core.files import File
 from django.core.servers.basehttp import FileWrapper
+from datetime import datetime
 
-
-def createMissionMethod(post, user):  # 创建一个Mission但是没发布，且没有和Attachment绑定
+def createMissionMethod(request, user):  # 创建一个Mission但是没发布，且没有和Attachment绑定
     newMission =  Mission()
-    newMission.title = post['title']
-    newMission.context = post['context']
-    newMission.status = post['status']
-    newMission.type = post['type']
-    newMission.reward = post['reward']
-    newMission.fine = post['fine']
-    newMission.deadline = post['deadline']
+    newMission.title = request.POST['title']
+    newMission.context = request.POST['context']
+    newMission.status = '0'
+    newMission.type = request.POST['type']
+    newMission.reward = request.POST['reward']
+    newMission.fine = request.POST['fine']
+
+    l = request.POST['deadline'].split('-')
+    newMission.deadline = datetime(int(l[0]),int(l[1]),int (l[2]))
+
+    if newMission.deadline < datetime.now():
+        return None
     newMission.employer = user
     newMission.save()
     return newMission
 
 def uploadFileMethod(request):  # 上传文件
-    if  (request.method == 'POST'):
+    try:
         files = request.FILES.getlist('multipleFileUpload')
         print (len(files))
         for f in files:
@@ -29,21 +34,37 @@ def uploadFileMethod(request):  # 上传文件
             newAttachment = Attachment()
             newAttachment.files = f
             newAttachment.originName = f.name
-            newAttachment.save()
-        return HttpResponse('success')
-    return render_to_response('file.html')
+        return newAttachment
+    except:
+        return None
+    # return render_to_response('file.html')
 
 
 def createAttachmentMethod(request, mission):  # 整合创建附件
-    pass
+    if  (request.method == 'POST'):
+        newAttachment = uploadFileMethod(request)
+        if newAttachment:
+            newAttachment.belongTo = mission
+            newAttachment.save()
+        # return newAttachment
 
 def offerMethod(request):  # 发布任务，这个方法实现整个任务的发布功能
     usrname = request.session.get('usrname', None)
     if (usrname is None):
         return HttpResponseRedirect('/login')
     if request.method == 'POST':
-        pass
-    return HttpResponse('Offer Mission')
+        nowUser = User.objects.filter(usrname__exact=usrname)[0]
+        if nowUser:
+            print(request.POST)
+            nowMission = createMissionMethod(request,nowUser)
+            if nowMission:
+                createAttachmentMethod(request,nowMission)
+                return HttpResponse('Offer Mission successfully!')
+            else:
+                return HttpResponse('Fail!')
+        else:
+            return HttpResponseRedirect('/login')
+    return render_to_response('offerMissionFramework.html',{})
 
 def downloadFileMethod(request):
     nowAttchment = Attachment.objects.last()

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="main">
+  	  <table align="center" width="500" border="0" cellpadding="2" cellspaceing="0">
+        <caption align="center"><h2>任务发布</h2></caption>
+        <form id="myForm" action="#" ENCTYPE="multipart/form-data" METHOD="POST">
+        <tr>
+            <th>Title：</th>
+        	<td><input type="text" name="title" size="20" id="usrName"></td>
+        </tr>
+        <tr>
+        	<th>Type：</th>
+        	<td>
+        		<select name="type">
+        		    <option>--请选择--</option>
+                    <option value="0">寻找失物</option>
+        		    <option value="1">食堂带饭</option>
+        		    <option value="2">超市购物</option>
+        		    <option value="3">文印中心</option>
+        		    <option value="4">校外任务</option>
+                    <option value="5">其他</option>
+                </select>
+        	<td>
+        </tr>
+        <tr>
+        	<th>Context：</th>
+        	<td><textarea name="context" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+        	<th>Reward：</th>
+        	<td><input type="number" name="reward" size="20"></td>
+        </tr>
+        <tr>
+        	<th>Fine：</th>
+        	<td><input type="number" name="fine" size="20"></td>
+        </tr>
+        <tr>
+        	<th>Deadline：</th>
+        	<td><input type="datetime" name="deadline" size="20"></td>
+        </tr>
+        <tr>
+        	<input type="file" name="multipleFileUpload" multiple />
+        </tr>
+        <tr>
+        	<td></td>
+        	<td>
+        		<input type="submit" name="submit" value="提交" onclick="demo()">
+        		<input type="reset" name="reset" value="重置">
+        	</td>
+        </form>
+      </table>
+  	</div>
+</body>
+</html>
