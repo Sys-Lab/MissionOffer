@@ -19,10 +19,14 @@ def loginCheckMethod(request):
             un = uf.cleaned_data['UN']
             pw = uf.cleaned_data['PW']
             nowUser = User.objects.filter(usrname__exact=un, password__exact=pw)
+            print(nowUser)
             if nowUser:  # 登录成功
+                nowUser = nowUser[0]
                 if not nowUser.isActive:
+
                     print('用户未激活')
                     return HttpResponse()
+                print('##########')
                 request.session['usrname'] = un
                 return HttpResponseRedirect('/index')
             else:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
@@ -105,7 +109,7 @@ def registerMethod(request):
                 return render_to_response('registerframework.html', {})
 
             createNewUser(request.POST)
-            request.session['usrname'] = request.POST['usrname']
+            # request.session['usrname'] = request.POST['usrname']
             return HttpResponseRedirect('/index')
             # return render_to_response('afterregisterframework.html',request.POST)
     return render_to_response('registerframework.html', {})
