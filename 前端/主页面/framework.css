@@ -4,7 +4,8 @@
         display:block;
         position:relative;
         margin:0;
-        width:1366px;
+        width:100%;
+        height:100%;
      }
      #boss1{
         margin:0%;
@@ -16,7 +17,7 @@
         width:1366px;
         font-size:180%;
         background:url(top.png) no-repeat;
-        display:inline;
+        
       }
      #boss2{
         margin:0%;
@@ -274,5 +275,31 @@
         background:;
         border-bottom:1px dashed black;
 
+      }
+      #display{
+        margin:0%;
+        padding:0%;
+        position:absolute;
+        height:100%;
+        width:1366px;
+        top:0px;
+        left:0px;
+        background:#CCCCCC;
+        opacity:0.4;
+        display:none;
+      }
+      #publish{
+        margin:0%;
+        padding:0%;
+        position:absolute;
+        height:558px;
+        width:700px;
+        top:50%;
+        left:50%;
+        margin-left:-350px;
+        margin-top:-279px;
+        background:white;
+        border:1px solid blue;
+        display:none;
       }
 </style>

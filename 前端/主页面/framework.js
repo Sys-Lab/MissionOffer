@@ -82,3 +82,7 @@
       document.getElementById("boss105").style.left="21.5%";
       document.getElementById("boss106").style.left="31%";
     }
+    function dp(){
+      document.getElementById("display").style.display="block";
+      document.getElementById("publish").style.display="block";
+    }
