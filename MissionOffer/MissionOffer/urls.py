@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^logout/$','Login.views.logoutMethod',name='logout'),
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
     url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
-
+    url(r'^register/activate/(?P<authKey>\w+)/$','Login.views.activateMethod',name='activate'),
     # OfferMission
     url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),
     # url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),

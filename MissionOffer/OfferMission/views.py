@@ -62,8 +62,9 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
     if (usrname is None):
         return HttpResponseRedirect('/login')
     if request.method == 'POST':
-        nowUser = User.objects.filter(usrname__exact=usrname)[0]
+        nowUser = User.objects.filter(usrname__exact=usrname)
         if nowUser:
+            nowUser = nowUser[0]
             print(request.POST)
             nowMission = createMissionMethod(request,nowUser)
             if nowMission:
@@ -73,8 +74,8 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
                 return HttpResponse('Fail!')
         else:
             return HttpResponseRedirect('/login')
-    #return render_to_response('offerMissionFramework.html',{})
-    return render_to_response('publish.html',{})
+    return render_to_response('offerMissionFramework.html',{})
+    # return render_to_response('publish.html',{})
 
 def downloadFileMethod(request):
     nowAttchment = Attachment.objects.last()

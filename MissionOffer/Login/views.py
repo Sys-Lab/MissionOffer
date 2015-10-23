@@ -5,6 +5,10 @@ from Login.forms import *
 from Login.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template import Context, loader
+from random import random
+import hashlib
 
 def loginCheckMethod(request):
     print(request.method)
@@ -16,6 +20,9 @@ def loginCheckMethod(request):
             pw = uf.cleaned_data['PW']
             nowUser = User.objects.filter(usrname__exact=un, password__exact=pw)
             if nowUser:  # 登录成功
+                if not nowUser.isActive:
+                    print('用户未激活')
+                    return HttpResponse()
                 request.session['usrname'] = un
                 return HttpResponseRedirect('/index')
             else:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
@@ -36,10 +43,42 @@ def createNewUser(post):
     newUser.email = post['email']
     newUser.phonenumber = post['phonenumber']
     newUser.eval = post['eval']
+    newUser.authKey = hashlib.sha1(str(random()).encode('utf-8')).hexdigest()
+    newUser.isActive = False
     newUser.save()
-    send_mail('MissionOffer register e-mail', 'This is a test e-mail from MissionOffer website.', 'missionoffer@sina.com',    [newUser.email], fail_silently=False)
+    # emailContent = loader.render_to_string('Email.html')
+    # print(emailContent)
+    subject = 'MissionOffer register e-mail'
+    fromEmail = 'missionoffer@sina.com'
+    toEmail = [newUser.email]
+    t = loader.get_template('Email.html')
+    activateUrl = 'http://127.0.0.1:8000/register/activate/'+newUser.authKey
+    htmlContent = t.render(Context({'activateUrl':activateUrl}))
+    msg = EmailMultiAlternatives(subject, htmlContent, fromEmail, toEmail)
+    msg.attach_alternative(htmlContent, "text/html")
+    msg.send()
+
+    # send_mail('MissionOffer register e-mail',
+    #           emailContent,
+    #           #'This is a test e-mail from MissionOffer website.',
+    #           # 'http://192.168.1.115:8000/register/emailAuth/'
+    #           # +newUser.authKey,
+    #           'missionoffer@sina.com',
+    #           [newUser.email],
+    #           fail_silently=False)
     return newUser
 
+def activateMethod(request, authKey):
+    print(authKey)
+    nowUser = User.objects.filter(authKey__exact=authKey)
+    if nowUser:
+        nowUser = nowUser[0]
+        nowUser.isActive = True
+        nowUser.authKey = None
+        nowUser.save()
+        return HttpResponse('激活成功！')
+    else:
+        return HttpResponse('激活失败！')
 
 def registerMethod(request):
     if request.method == 'POST':

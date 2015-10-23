@@ -12,6 +12,7 @@ class User(models.Model):
     phonenumber = models.CharField(max_length=20)
     eval = models.CharField(max_length=100)
     money = models.FloatField(default=0.00)
-
+    authKey = models.CharField(max_length=45,null=True)
+    isActive = models.BooleanField(default=False)
     def __str__(self):
         return self.usrname
