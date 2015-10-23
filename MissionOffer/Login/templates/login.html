@@ -8,7 +8,7 @@
       a{text-decoration:none;}
     </style>
     <script src="/statics/loginFolder/jquery-2.1.4.min.js"></script>
-    <script src="/statics/loginFolder/login.js"></script>
+    <script src="/statics/loginFolder/login1.js"></script>
   </head>
   <body>
     <div id="all">
@@ -16,15 +16,13 @@
     <div id="loginpicture"></div>
     <div id="login">
       <div id="loginframework"></div>
-      <form action="#" method="post" style="height:280px;" onSubmit="return demo()">
-          <input type="text" id="usrName" name="usrname" size="25">
-          <input type="password" id="passWord" name="password" size="25">
+          <input type="text" id="usrName" name="UN" size="25">
+          <input type="password" id="passWord" name="PW" size="25">
       	  <input type="checkbox" id="pw"><div id="reps">记住密码</div>
       	  <input type="checkbox" id="lg"><div id="autolo">自动登录</div>
-        <div id="sub"><input type="submit" id="sbm" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;" onclick="demo()">
+        <div id="sub"><input type="button" id="sbm" name="sb" value="登陆" style="font-size:150%;color:white;background-color:#5FF571;height:43px;width:294;border:0px;" onclick="demo()">
         </div>
-      </form>
-      <div id="register">没有账号？请<a href="/register" style="color:#5FF571;">注册</a></div>
+      <div id="register">没有账号？请<a href="/register/" style="color:#5FF571;">注册</a></div>
     </div>
     <div id="dengluf"></div>
     <div id="empty">用户名长度不能超过30且不能为空</div>

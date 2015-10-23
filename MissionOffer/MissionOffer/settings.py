@@ -108,10 +108,13 @@ STATIC_URL = '/static/'
 
 STATIC_PATH= os.path.join(os.path.dirname(__file__), '../statics').replace('\\','/')
 
-''' # 用于email发送
+ # 用于email发送
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.qq.com'
+EMAIL_HOST = 'smtp.sina.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER='xxxxxx@qq.com'
-EMAIL_HOST_PASSWORD='xxxxx'
-'''
+EMAIL_HOST_USER='missionoffer@sina.com'
+EMAIL_HOST_PASSWORD='@MissionOffer'
+EMAIL_SUBJECT_PREFIX = u'[MissioOffer]'            #为邮件Subject-line前缀,默认是'[django]'
+EMAIL_USE_TLS = True                             #与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
+#管理员站点
+SERVER_EMAIL = '583268345@qq.com'

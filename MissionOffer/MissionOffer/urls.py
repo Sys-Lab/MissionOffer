@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^index/$','Login.views.indexMethod',name='index'),
     url(r'^logout/$','Login.views.logoutMethod',name='logout'),
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
-    # url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
+    url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
 
     # OfferMission
     url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),

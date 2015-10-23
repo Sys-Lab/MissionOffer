@@ -12,7 +12,7 @@
         height:95px;
         top:0px;
         left:0px;
-        background:url(/statics/loginFolder/head.png);
+        background:url("/statics/loginFolder/head.png");
       }
       #loginpicture{
       	position:absolute;
@@ -22,7 +22,7 @@
       	height:490px;
       	top:140px;
       	left:220px;
-      	background:url(/statics/loginFolder/picture.png);
+      	background:url("/statics/loginFolder/picture.png");
       }
       #login{
       	position:absolute;
@@ -42,7 +42,7 @@
         height:163px;
         top:0px;
         left:0px;
-        background:url(/statics/loginFolder/login.png);
+        background:url("/statics/loginFolder/login.png");
       }
       #usrName{
       	position:absolute;
@@ -143,7 +143,7 @@
         width:30px;
         top:223px;
         left:1080px;
-        background:url(/statics/loginFolder/1.jpg);
+        background:url(1.jpg);
         display:none;
       }
       #denglut{
@@ -154,7 +154,7 @@
         width:30px;
         top:295px;
         left:1080px;
-        background:url(/statics/loginFolder/1.jpg);
+        background:url(1.jpg);
         display:none;
       }
       #empty{

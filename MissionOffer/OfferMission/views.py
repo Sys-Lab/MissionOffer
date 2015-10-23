@@ -73,7 +73,8 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
                 return HttpResponse('Fail!')
         else:
             return HttpResponseRedirect('/login')
-    return render_to_response('offerMissionFramework.html',{})
+    #return render_to_response('offerMissionFramework.html',{})
+    return render_to_response('publish.html',{})
 
 def downloadFileMethod(request):
     nowAttchment = Attachment.objects.last()
