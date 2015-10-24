@@ -8,7 +8,10 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template import Context, loader
 from random import random
+from MissionOffer.settings import *
+from OfferMission.models import *
 import hashlib
+
 
 def loginCheckMethod(request):
     print(request.method)
@@ -49,19 +52,23 @@ def createNewUser(post):
     newUser.eval = post['eval']
     newUser.authKey = hashlib.sha1(str(random()).encode('utf-8')).hexdigest()
     newUser.isActive = False
-    newUser.save()
+
     # emailContent = loader.render_to_string('Email.html')
     # print(emailContent)
     subject = 'MissionOffer register e-mail'
     fromEmail = 'missionoffer@sina.com'
     toEmail = [newUser.email]
     t = loader.get_template('Email.html')
-    activateUrl = 'http://127.0.0.1:8000/register/activate/'+newUser.authKey
+    activateUrl = MY_SITE_URL+'/register/activate/'+newUser.authKey
     htmlContent = t.render(Context({'activateUrl':activateUrl}))
     msg = EmailMultiAlternatives(subject, htmlContent, fromEmail, toEmail)
     msg.attach_alternative(htmlContent, "text/html")
-    msg.send()
-
+    try :
+        msg.send()
+    except:
+        print ('Email Error')
+        return None
+    newUser.save()
     # send_mail('MissionOffer register e-mail',
     #           emailContent,
     #           #'This is a test e-mail from MissionOffer website.',
@@ -108,13 +115,21 @@ def registerMethod(request):
                 print('邮箱已存在')
                 return render_to_response('registerframework.html', {})
 
-            createNewUser(request.POST)
+            newUser = createNewUser(request.POST)
+            if not newUser:
+                return HttpResponse('邮箱发送失败，请重新注册！')
             # request.session['usrname'] = request.POST['usrname']
             return HttpResponseRedirect('/index')
             # return render_to_response('afterregisterframework.html',request.POST)
     return render_to_response('registerframework.html', {})
 
-def indexMethod(request):
+def toIndexMethod(request):
+    return HttpResponseRedirect('/index')
+
+def indexMethod(request, type, status):
+    print (type,status)
+    if type == '' and status == '':
+        print(Mission.typeChoices[0],Mission.statusChoices[0])
     usrname = request.session.get('usrname', '')
     return render_to_response('framework.html',{'usrname': usrname})
 

@@ -318,7 +318,7 @@
         position:absolute;
         height:38px;
         width:290px;
-        background:url(title/statics/frameworkFolder/.png);
+        background:url(/statics/frameworkFolder/title.png);
         top:28px;
         left:170px;
       }

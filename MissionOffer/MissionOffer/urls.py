@@ -22,10 +22,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     # Login
-    url(r'^$','Login.views.indexMethod',name=''),
+    url(r'^$','Login.views.toIndexMethod',name=''),
     url(r'^register/$','Login.views.registerMethod',name='register'),
     url(r'^login/$','Login.views.loginMethod',name='login'),
-    url(r'^index/$','Login.views.indexMethod',name='index'),
+    url(r'^index/(?P<type>\w*)/*(?P<status>\w*)/*$','Login.views.indexMethod',name='index'),
     url(r'^logout/$','Login.views.logoutMethod',name='logout'),
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
     url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),

@@ -61,11 +61,11 @@
     </div>
     <div id="display"></div>
     <div id="publish">
-      <form action="#" method="post">
+      <form action="/offer/" method="post">
       <div id="publish_right"></div>
       <div id="publish_input1"></div>
-      <input type="text" id="publish_top" size="25"/>
-      <select name="task" id="option">
+      <input type="text" name="title" id="publish_top" size="25"/>
+      <select name="type" id="option">
         <option>任务类型</option>
         <option value="1">寻找失物</option>
         <option value="2">食堂带饭</option>
@@ -74,18 +74,18 @@
         <option value="5">校外任务</option>
       </select>
       <div id="description"></div>
-      <textarea id="dscb" name="dscription"></textarea>
-      <input type="file" name="uploadfile" id="uploadfile" value=""/>
+      <textarea id="dscb" name="context"></textarea>
+      <input type="file" name="multipleFileUpload" multiple id="uploadfile"/>
       <div id="money_picture"></div>
-      <input type="text" id="offer_reward" name="offer_reward">
-      <input type="text" id="cash_pledge" name="cash_pledge">
+      <input type="number" id="offer_reward" name="reward">
+      <input type="number" id="cash_pledge" name="fine">
       <select name="year" id="option_year">
         <option value="0">年</option>
-        <option value="1">2013</option>
-        <option value="2">2014</option>
-        <option value="3">2015</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
       </select>
-      <select name="mouth" id="option_mouth">
+      <select name="month" id="option_mouth">
         <option value="0">月</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -161,11 +161,11 @@
         <option value="23">23</option>
         <option value="24">24</option>
       </select>
-      <select name="hour" id="option_minute">
+      <select name="minute" id="option_minute">
         <option value="0">分</option>
-        <option value="1">15</option>
-        <option value="2">30</option>
-        <option value="3">45</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
       </select>
       <input type="submit" id="sumit" value="发布任务">
       </form>

@@ -13,17 +13,26 @@ def createMissionMethod(request, user):  # 创建一个Mission但是没发布，
     newMission.context = request.POST['context']
     newMission.status = '0'
     newMission.type = request.POST['type']
-    newMission.reward = request.POST['reward']
-    newMission.fine = request.POST['fine']
-
-    l = request.POST['deadline'].split('-')
-    newMission.deadline = datetime(int(l[0]),int(l[1]),int (l[2]))
-
+    newMission.reward = int(request.POST['reward'])
+    newMission.fine = int(request.POST['fine'])
+    if newMission.reward < 0 or newMission.reward <0:
+        return (1,None)
+    if newMission.reward > user.money:
+        return (2,None)
+    user.money -= newMission.reward
+    year = request.POST['year']
+    month = request.POST['month']
+    day = request.POST['day']
+    hour = request.POST['hour']
+    minute = request.POST['minute']
+    newMission.deadline = datetime(year=int(year),month=int(month),day=int (day),hour=int (hour),minute=int (minute))
+    print(newMission.deadline)
     if newMission.deadline < datetime.now():
-        return None
+        return (3,None)
     newMission.employer = user
     newMission.save()
-    return newMission
+    user.save()
+    return (0,newMission)
 
 def uploadFileMethod(request):  # 上传文件
     try:
@@ -67,14 +76,25 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
             nowUser = nowUser[0]
             print(request.POST)
             nowMission = createMissionMethod(request,nowUser)
-            if nowMission:
+            if nowMission[0] == 1:
+                return HttpResponse('赏金和押金必须为正数！')
+            if nowMission[0] == 2:
+                return HttpResponse('账户余额不足！')
+            if nowMission[0] == 3:
+                return HttpResponse('截止日期已过！')
+            if nowMission[0] == 0:
+                nowMission = nowMission[1]
+                # print(nowMission.offerTime)
+                # print(datetime.utcnow())
+                # print(nowMission.deadline)
                 createAttachmentMethod(request,nowMission)
                 return HttpResponse('Offer Mission successfully!')
             else:
                 return HttpResponse('Fail!')
         else:
             return HttpResponseRedirect('/login')
-    return render_to_response('offerMissionFramework.html',{})
+    return HttpResponseRedirect('/index')
+    # return render_to_response('offerMissionFramework.html',{})
     # return render_to_response('publish.html',{})
 
 def downloadFileMethod(request):
