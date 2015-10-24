@@ -86,3 +86,7 @@
       document.getElementById("display").style.display="block";
       document.getElementById("publish").style.display="block";
     }
+    function pd(){
+      document.getElementById("display").style.display="none";
+      document.getElementById("publish").style.display="none";
+    }
