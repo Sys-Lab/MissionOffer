@@ -59,16 +59,107 @@
       <div id="boss123"></div>
     </div>
     </div>
-    <div id="task_p">
-    <div id="condition">已完成</div>
-    <div id="title">打印一份作业</div>
-    <div id="taskowner_l">悬赏人：</div>
-    <div id="taskowner">王二麻</div>
-    <div id="task_time">2015-9-10</div>
-    <div id="task_dscb">请到文印中心打印一份《计算机组成原理》第二章作业。</div>
-    <div id="task_b">悬赏:</div>
-    <div id="task_money">5.00￥</div>
+    {% for i in missionList %}
+    <div id={{i.id}}task_p style="margin:20px;
+        padding:0%;
+        position:relative;
+        height:188px;
+        width:614px;
+        top:-350px;
+        left:380px;
+        background:#F3F3F3;">
+    <div id={{i.id}}condition>{{i.status}}</div>
+    <div id={{i.id}}title style="margin:0px;
+        padding:0%;
+        position:relative;
+        height:32px;
+        width:200px;
+        top:0px;
+        left:40px;
+        color:#979797;
+        font-size:30px;
+        font-weight:bold;">{{i.title}}</div>
+    <div id={{i.id}}taskowner_l style="margin:0px;
+        padding:0%;
+        position:relative;
+        height:20px;
+        width:50px;
+        top:-30px;
+        left:390px;
+        color:red;
+        font-size:10px;
+        font-weight:bold;">悬赏人：</div>
+    <div id={{i.id}}taskowner style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:20px;
+        width:55px;
+        top:-55px;
+        left:435px;
+        color:red;
+        font-size:18px;
+        font-weight:bold;">{{i.employer}}</div>
+    <div id={{i.id}}task_time style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:20px;
+        width:70px;
+        top:-75px;
+        left:540px;
+        color:red;
+        font-size:10px;
+        font-weight:bold;">{{i.deadline}}</div>
+    <div id={{i.id}}task_dscb style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:72px;
+        width:450px;
+        top:-40px;
+        left:80px;
+        color:red;
+        font-size:18px;
+        font-weight:bold;
+        background:;">{{i.context}}</div>
+    <div id={{i.id}}task_b style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:30px;
+        width:60px;
+        top:-40px;
+        left:430px;
+        color:red;
+        font-size:20px;
+        font-weight:bold;">悬赏:</div>
+    <div id={{i.id}}task_money style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:40px;
+        width:60px;
+        top:-78px;
+        left:480px;
+        color:red;
+        font-size:30px;
+        font-weight:bold;">{{i.reward}}￥</div>
+    <div id={{i.id}}task_class style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        height:40px;
+        width:140px;
+        top:-120px;
+        left:35px;
+        color:red;
+        font-size:30px;
+        font-weight:bold;">{{i.type}}</div>
     </div>
+
+    {% endfor %}
+
     <div id="display"></div>
     <div id="publish">
       <form action="/offer/" method="post">

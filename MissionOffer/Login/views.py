@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
+from django.http import JsonResponse
 from Login.forms import *
 from Login.models import User
 from django.core.exceptions import ObjectDoesNotExist
@@ -23,20 +24,30 @@ def loginCheckMethod(request):
             pw = uf.cleaned_data['PW']
             nowUser = User.objects.filter(usrname__exact=un, password__exact=pw)
             print(nowUser)
+            result = {}
+            result['success'] = False
+            result['reason'] = '用户名或密码错误'
             if nowUser:  # 登录成功
                 nowUser = nowUser[0]
                 if not nowUser.isActive:
-
+                    result['reason'] = '用户未激活'
                     print('用户未激活')
-                    return HttpResponse()
-                print('##########')
+                    # return HttpResponse()
+                    return JsonResponse(result)
+                # print('##########')
+                result['success'] = True
+                result['reason'] = '登录成功'
                 request.session['usrname'] = un
-                return HttpResponseRedirect('/index')
+                return JsonResponse(result)
+                # return HttpResponseRedirect('/index')
             else:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
                 print('用户名或密码错误')
-                return HttpResponse()
+                # return HttpResponse()
+                return JsonResponse(result)
 
 def loginMethod(request):
+    if 'usrname'in request.session:
+        del request.session['usrname']
     return render_to_response('login.html', {})
 
 def createNewUser(post):
@@ -92,6 +103,8 @@ def activateMethod(request, authKey):
         return HttpResponse('激活失败！')
 
 def registerMethod(request):
+    if 'usrname'in request.session:
+        del request.session['usrname']
     if request.method == 'POST':
         if 'submit' in request.POST:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
             if len(request.POST['usrname']) <= 0:  # 没输入用户名
@@ -126,15 +139,29 @@ def registerMethod(request):
 def toIndexMethod(request):
     return HttpResponseRedirect('/index')
 
-def indexMethod(request, type, status):
-    print (type,status)
+def getMissionListMethod(request):
+    type = request.POST['type']
+    status = request.POST['status']
     if type == '' and status == '':
-        print(Mission.typeChoices[0],Mission.statusChoices[0])
-    usrname = request.session.get('usrname', '')
-    return render_to_response('framework.html',{'usrname': usrname})
+        list = Mission.objects.filter()
+    else:
+        list = Mission.objects.filter(type__exact=type,status__exact=status)
+    return list
+    # print(list)
 
-def logoutMethod(requset):
-    del requset.session['usrname']
+
+def indexMethod(request):
+    if request.method == 'POST':
+        missionList = getMissionListMethod(request)
+    missionList = Mission.objects.filter()
+    for i in missionList:
+        i.status = i.get_status_display()
+        i.type = i.get_type_display()
+    usrname = request.session.get('usrname', '')
+    return render_to_response('framework.html',{'usrname': usrname,'missionList':missionList})
+
+def logoutMethod(request):
+    del request.session['usrname']
     return HttpResponseRedirect('/index')
 
 def userCenterMethod(request):

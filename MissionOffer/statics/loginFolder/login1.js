@@ -29,11 +29,12 @@
           $.post('/loginCheck/', {
             'UN' : document.getElementById('usrName').value,
             'PW' : document.getElementById('passWord').value
-            }, function(user) {
-              console.log(user);
-              if (user) {
+            }, function(result) {
+              console.log(result);
+              if (result['success']) {
                 location = '/index/';
               } else {
+                document.getElementById("password_false").innerHTML = result['reason']
                 document.getElementById("password_false").style.display="block";
               }
           });
