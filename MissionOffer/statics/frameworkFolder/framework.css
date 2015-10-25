@@ -625,4 +625,10 @@
         background-color:#5FF571;
         border:0px;
       }
+      #classify{
+        display:none;
+      }
+      #task_condition{
+        display:none;
+      }
 </style>
