@@ -10,29 +10,44 @@ from datetime import datetime
 def createMissionMethod(request, user):  # 创建一个Mission但是没发布，且没有和Attachment绑定
     newMission =  Mission()
     newMission.title = request.POST['title']
+    if newMission.title == '':
+        return ('标题不能为空！',None)
     newMission.context = request.POST['context']
+    if newMission.context == '':
+        return ('描述不能为空！',None)
     newMission.status = '0'
     newMission.type = request.POST['type']
+    if newMission.type == '任务类型':
+        return ('类型不能为空！',None)
+    if request.POST['reward'] == '':
+        return ('赏金不能为空！',None)
+    if request.POST['fine'] == '':
+        return ('押金不能为空！',None)
     newMission.reward = int(request.POST['reward'])
     newMission.fine = int(request.POST['fine'])
     if newMission.reward < 0 or newMission.reward <0:
-        return (1,None)
+        return ('赏金和押金必须为正数！',None)
     if newMission.reward > user.money:
-        return (2,None)
+        return ('账户余额不足！',None)
     user.money -= newMission.reward
     year = request.POST['year']
     month = request.POST['month']
     day = request.POST['day']
     hour = request.POST['hour']
     minute = request.POST['minute']
-    newMission.deadline = datetime(year=int(year),month=int(month),day=int (day),hour=int (hour),minute=int (minute))
+    if year=='0' or month=='0' or day=='0' or hour=='0' or minute=='0':
+        return ('日期信息不能为空！',None)
+    try :
+        newMission.deadline = datetime(year=int(year),month=int(month),day=int (day),hour=int (hour),minute=int (minute))
+    except :
+        return ('日期信息错误！',None)
     print(newMission.deadline)
     if newMission.deadline < datetime.now():
-        return (3,None)
+        return ('截止日期已过！',None)
     newMission.employer = user
     newMission.save()
     user.save()
-    return (0,newMission)
+    return ('',newMission)
 
 def uploadFileMethod(request):  # 上传文件
     try:
@@ -76,21 +91,19 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
             nowUser = nowUser[0]
             print(request.POST)
             nowMission = createMissionMethod(request,nowUser)
-            if nowMission[0] == 1:
-                return HttpResponse('赏金和押金必须为正数！')
-            if nowMission[0] == 2:
-                return HttpResponse('账户余额不足！')
-            if nowMission[0] == 3:
-                return HttpResponse('截止日期已过！')
-            if nowMission[0] == 0:
+            if nowMission[0]:
+                return render_to_response('offerResult.html',{'reason':nowMission[0]})
+            if not nowMission[0]:
                 nowMission = nowMission[1]
                 # print(nowMission.offerTime)
                 # print(datetime.utcnow())
                 # print(nowMission.deadline)
                 createAttachmentMethod(request,nowMission)
-                return HttpResponse('Offer Mission successfully!')
+                return render_to_response('offerResult.html',{'reason':'Offer Mission successfully!'})
+                # return HttpResponse('Offer Mission successfully!')
             else:
-                return HttpResponse('Fail!')
+                return render_to_response('offerResult.html',{'reason':'Fail!'})
+                # return HttpResponse('Fail!')
         else:
             return HttpResponseRedirect('/login')
     return HttpResponseRedirect('/index')

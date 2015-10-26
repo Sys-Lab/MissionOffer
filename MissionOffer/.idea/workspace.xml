@@ -36,8 +36,8 @@
       <file leaf-file-name="framework.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Login/templates/framework.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="22.758621">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.551723">
+              <caret line="192" column="24" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewMission.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewMission.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OfferMission/templates/viewMission.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5076142">
+            <state vertical-scroll-proportion="-10.344828">
               <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
@@ -91,10 +91,20 @@
         <entry file="file://$PROJECT_DIR$/OfferMission/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+              <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offerResult.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OfferMission/templates/offerResult.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20304568">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,8 +146,9 @@
         <option value="$PROJECT_DIR$/Login/views.py" />
         <option value="$PROJECT_DIR$/MissionOffer/urls.py" />
         <option value="$PROJECT_DIR$/Login/templates/framework.html" />
-        <option value="$PROJECT_DIR$/OfferMission/views.py" />
         <option value="$PROJECT_DIR$/OfferMission/templates/viewMission.html" />
+        <option value="$PROJECT_DIR$/OfferMission/views.py" />
+        <option value="$PROJECT_DIR$/OfferMission/templates/offerResult.html" />
       </list>
     </option>
   </component>
@@ -487,13 +498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MissionOffer/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Login/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -846,17 +850,25 @@
     <entry file="file://$PROJECT_DIR$/OfferMission/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+          <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OfferMission/templates/viewMission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.344828">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Login/templates/framework.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.758621">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.551723">
+          <caret line="192" column="24" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#div#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -871,10 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfferMission/templates/viewMission.html">
+    <entry file="file://$PROJECT_DIR$/OfferMission/templates/offerResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5076142">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.20304568">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
