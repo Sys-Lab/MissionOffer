@@ -154,9 +154,9 @@ def indexMethod(request):
     if request.method == 'POST':
         missionList = getMissionListMethod(request)
     missionList = Mission.objects.filter()
-    for i in missionList:
-        i.status = i.get_status_display()
-        i.type = i.get_type_display()
+    # for i in missionList:
+    #     i.status = i.get_status_display()
+    #     i.type = i.get_type_display()
     usrname = request.session.get('usrname', '')
     return render_to_response('framework.html',{'usrname': usrname,'missionList':missionList})
 

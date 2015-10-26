@@ -60,7 +60,10 @@
     </div>
     </div>
     {% for i in missionList %}
-    <div id={{i.id}}task_p style="margin:20px;
+    {% url 'viewMission' i.id as missionURL %}
+
+    <a href="{{missionURL}}">
+    <div id={{i.id}}task_p  style="margin:20px;
         padding:0%;
         position:relative;
         height:188px;
@@ -68,7 +71,7 @@
         top:-350px;
         left:380px;
         background:#F3F3F3;">
-    <div id={{i.id}}condition>{{i.status}}</div>
+    <div id={{i.id}}condition>{{i.get_status_display}}</div>
     <div id={{i.id}}title style="margin:0px;
         padding:0%;
         position:relative;
@@ -155,9 +158,9 @@
         left:35px;
         color:red;
         font-size:30px;
-        font-weight:bold;">{{i.type}}</div>
+        font-weight:bold;">{{i.get_type_display}}</div>
     </div>
-
+    </a>
     {% endfor %}
 
     <div id="display"></div>

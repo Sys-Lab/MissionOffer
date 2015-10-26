@@ -97,6 +97,16 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
     # return render_to_response('offerMissionFramework.html',{})
     # return render_to_response('publish.html',{})
 
+def viewMissionMethod(request, missionID):
+    print(missionID)
+    mission = Mission.objects.filter(id__exact=24)
+    print(mission)
+    if (mission):
+        mission = mission[0]
+        return render_to_response('viewMission.html',{'mission':mission})
+    else:
+        return HttpResponse('任务不存在！')
+
 def downloadFileMethod(request):
     nowAttchment = Attachment.objects.last()
     nowFile = nowAttchment.files  # 先写了下载最后一个上传的文件的实现，之后需要实现和任务的链接

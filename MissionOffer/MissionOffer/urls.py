@@ -31,10 +31,14 @@ urlpatterns = [
     url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
     url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
     url(r'^register/activate/(?P<authKey>\w+)/$','Login.views.activateMethod',name='activate'),
+
     # OfferMission
-    url(r'^offer/$','OfferMission.views.offerMethod',name='offerMethod'),
+    url(r'^offer/$','OfferMission.views.offerMethod',name='offer'),
     # url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),
-    url(r'^downloadFile/$','OfferMission.views.downloadFileMethod',name='downloadFileMethod'),
+    url(r'^downloadFile/$','OfferMission.views.downloadFileMethod',name='downloadFile'),
+
+    # ViewMission
+    url(r'^mission/(?P<missionID>\d+)/$','OfferMission.views.viewMissionMethod',name='viewMission'),
 
     # statics
     url(r'^statics/(?P<path>.*)', 'django.views.static.serve',{'document_root':settings.STATIC_PATH}),
