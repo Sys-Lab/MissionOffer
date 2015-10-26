@@ -68,7 +68,7 @@ def createAttachmentMethod(request, mission):  # 整合创建附件
     if  (request.method == 'POST'):
         try:
             files = request.FILES.getlist('multipleFileUpload')
-            print (len(files))
+            # print (len(files))
             for f in files:
                 print (f.name)
                 newAttachment = Attachment()
@@ -86,10 +86,10 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
     if (usrname is None):
         return HttpResponseRedirect('/login')
     if request.method == 'POST':
+
         nowUser = User.objects.filter(usrname__exact=usrname)
         if nowUser:
             nowUser = nowUser[0]
-            print(request.POST)
             nowMission = createMissionMethod(request,nowUser)
             if nowMission[0]:
                 return render_to_response('offerResult.html',{'reason':nowMission[0]})
@@ -111,17 +111,26 @@ def offerMethod(request):  # 发布任务，这个方法实现整个任务的发
     # return render_to_response('publish.html',{})
 
 def viewMissionMethod(request, missionID):
-    print(missionID)
-    mission = Mission.objects.filter(id__exact=24)
+    print(int(missionID))
+    mission = Mission.objects.filter(id__exact=int(missionID))
     print(mission)
     if (mission):
         mission = mission[0]
-        return render_to_response('viewMission.html',{'mission':mission})
+        usrname = request.session.get('usrname', '')
+        leftDays = (mission.deadline - datetime.now()).days
+        attachmentList = mission.attachment_set.all()
+        print(attachmentList)
+        # return render_to_response('viewMission.html',{'mission':mission})
+        return render_to_response('taskdetails.html',{'usrname': usrname,'mission':mission,'leftDays':leftDays,'attachmentList':attachmentList})
     else:
         return HttpResponse('任务不存在！')
 
-def downloadFileMethod(request):
-    nowAttchment = Attachment.objects.last()
+def downloadFileMethod(request,attachmentID):
+    print (int(attachmentID))
+    nowAttchment = Attachment.objects.filter(id__exact=int(attachmentID))
+    if not nowAttchment:
+        return HttpResponse('文件没找到!')
+    nowAttchment = nowAttchment[0]
     nowFile = nowAttchment.files  # 先写了下载最后一个上传的文件的实现，之后需要实现和任务的链接
                                                # 还有需要判断当前下载的用户是否为任务接受者？
     def readFile(f, buf_size=262144):  # 大文件下载，设定缓存大小
@@ -135,6 +144,6 @@ def downloadFileMethod(request):
     # 'attachment; filename='
     response = HttpResponse(readFile(nowFile), content_type='APPLICATION/OCTET-STREAM')  # 设定文件头，这种设定可以让任意文件都能正确下载，而且已知文本文件不是本地打开
     response['Content-Encoding'] = 'unicode'
-    response['Content-Disposition'] = 'attachment; filename='+ nowAttchment.originName.encode('utf-8')  # 设定传输给客户端的文件名称
+    response['Content-Disposition'] = 'attachment; filename='+ nowAttchment.originName  # 设定传输给客户端的文件名称
     response['Content-Length'] = nowFile.size  # 传输给客户端的文件大小
     return response

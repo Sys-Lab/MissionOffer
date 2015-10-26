@@ -165,21 +165,22 @@
 
     <div id="display"></div>
     <div id="publish">
-      <form action="/offer/" method="post">
+      <form action="/offer/" ENCTYPE="multipart/form-data" method="post">
       <div id="publish_right"></div>
       <div id="publish_input1"></div>
       <input type="text" name="title" id="publish_top" size="25"/>
       <select name="type" id="option">
         <option>任务类型</option>
-        <option value="1">寻找失物</option>
-        <option value="2">食堂带饭</option>
-        <option value="3">超市购物</option>
-        <option value="4">文印中心</option>
-        <option value="5">校外任务</option>
+        <option value="0">寻找失物</option>
+        <option value="1">食堂带饭</option>
+        <option value="2">超市购物</option>
+        <option value="3">文印中心</option>
+        <option value="4">校外任务</option>
+        <option value="5">其他</option>
       </select>
       <div id="description"></div>
       <textarea id="dscb" name="context"></textarea>
-      <input type="file" name="multipleFileUpload" multiple id="uploadfile"/>
+      <input type="file" name="multipleFileUpload" id="uploadfile" multiple/>
       <div id="money_picture"></div>
       <input type="number" id="offer_reward" name="reward">
       <input type="number" id="cash_pledge" name="fine">

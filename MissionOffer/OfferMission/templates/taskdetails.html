@@ -1,0 +1,67 @@
+<html>
+  <head>
+  	<title></title>
+  	<meta charset="utf-8">
+    <link rel="StyleSheet" href="/statics/taskdetails/taskdetails.css" type="text/css">
+    <style>
+      a{text-decoration:none;}
+      body{margin:0px;}
+    </style>
+  </head>
+  <body>
+
+    <div id="all">
+  	<div id="boss1"></div>
+    <div id="boss2">Welcome to MissinOffer</div>
+    {% if usrname != ''%}
+    <div id="boss3">
+      <a href="/userCenter" class="login" style="color:white">{{usrname}}</a>/
+      <a href="/logout" class="register" style="color:white">退出</a>
+    </div>
+    {%else%}
+    <div id="boss3">
+      <a href="/login" class="login" style="color:white">登陆</a>/
+      <a href="/register" class="register" style="color:white">注册</a>
+    </div>
+    {%endif%}
+    <div id="boss4"></div>
+    <a href="/index" id="back">主页&gt;&gt;</a>
+    <div id="task_details_word">任务详情</div>
+    <div id="main_picture">
+      <div id="title">{{mission.title}}<div>
+      <div id="taskowner_l">悬赏人：</div>
+      <div id="taskowner">{{mission.employer}}</div>
+      <div id="task_time">{{mission.deadline|date:"Y-m-d H:i" }}</div>
+      <div id="task_b">悬赏：</div>
+      <div id="task_money_symbol1">￥</div>
+      <div id="task_money1">{{mission.reward}}</div>
+      <div id="task_p">押金：</div>
+      <div id="task_money_symbol2">￥</div>
+      <div id="task_money2">{{mission.fine}}</div>
+      <div id="time_clock"></div>
+      <div id="time1">剩余</div>
+      <div id="time_time">{{leftDays}}</div>
+      <div id="time2">天</div>
+      <div id="task_dscb">&nbsp;&nbsp;&nbsp;&nbsp;{{mission.context}}</div>
+      <div id="file_word">附件：
+      {% for i in attachmentList%}
+        {% url 'downloadFile' i.id as attachmentURL %}
+        <a href={{attachmentURL}}>{{i.originName}}</a>
+      {% endfor %}
+      </div>
+      <input type="button" id="button" value="接受"><div>
+    </div>
+    <div id="hiscondition">
+      <div id="lv">10</div>
+      <div id="publish_task">20</div>
+      <div id="get_task">0</div>
+    </div>
+    <div id="disc_word">任务讨论</div>
+    <div id="disc">
+      <div id="disc_people">王二麻</div>
+      <div id="disc_time">2015-9-13</div>
+      <div id="disc_content">自己去买</div>
+    </div>
+    <input type="button" id="discuss" value="评论"><div>
+  </body>
+</html>

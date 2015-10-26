@@ -35,7 +35,7 @@ urlpatterns = [
     # OfferMission
     url(r'^offer/$','OfferMission.views.offerMethod',name='offer'),
     # url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),
-    url(r'^downloadFile/$','OfferMission.views.downloadFileMethod',name='downloadFile'),
+    url(r'^downloadFile/(?P<attachmentID>\d+)/$','OfferMission.views.downloadFileMethod',name='downloadFile'),
 
     # ViewMission
     url(r'^mission/(?P<missionID>\d+)/$','OfferMission.views.viewMissionMethod',name='viewMission'),
