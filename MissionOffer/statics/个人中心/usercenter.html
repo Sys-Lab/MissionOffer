@@ -1,0 +1,60 @@
+<html>
+  <head>
+  	<title></title>
+  	<meta charset="utf-8">
+    <link rel="StyleSheet" href="usercenter.css" type="text/css">
+    <style>
+      a{text-decoration:none;}
+      body{margin:0px;}
+    </style>
+    <script src="usercenter.js"></script>
+  </head>
+  <body>
+    <script src="framework.js"></script>
+    <div id="all">
+  	<div id="boss1"></div>
+    <div id="boss2">Welcome to User Center</div>
+    <div id="boss3">Username/<a href="#" class="register" style="color:white">Logout</a></div>
+    <div id="boss4"></div>
+    <div id="container">
+      <a href="#" id="back">主页&gt;&gt;</a>
+      <div id="word_usercenter">个人中心</div>
+    </div>
+    <div id="condition_p">
+      <div id="my_information_input1"><a href="#" id="my_information" onclick="left_input1()">个人信息</a></div>
+      <div id="my_task_input2"><a href="#" id="my_task" onclick="left_input2()">我的任务</a></div>
+    </div>
+    <div id="main_information">
+      <div id="my_name">账号：叶良辰</div>
+      <div id="my_email">邮箱：123456789@163.com</div>
+      <div id="my_sex">性别：保密</div>
+      <div id="my_number">学号：2014220502001</div>
+      <div id="my_phone">电话：13888888888</div>
+      <div id="my_introduce_w">自我介绍：</div>
+      <div id="my_introduce">良辰最喜欢对那些自以为有能力的人出手。完成良辰的任务，良辰必有重谢。</div>
+    </div>
+    <div id="main_task">
+      <div id="task_published">已发布的任务：27&nbsp;<a href="#" onclick="information1()"><img src="pull.png"></a></div>
+      <div id="task_published_details">
+        <div id="task_published_one"><img src="apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_published_two"><img src="apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+      <div id="task_gotten">已接受的任务：0&nbsp;<a href="#" onclick="information2()"><img src="pull.png"></a></div>
+      <div id="task_gotten_details">
+        <div id="task_gotton_one"><img src="apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_gotton_two"><img src="apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+      <div id="task_done">已完成的任务：0&nbsp;<a href="#" onclick="information3()"><img src="pull.png"></a></div>
+      <div id="task_done_details">
+        <div id="task_done_one"><img src="apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_done_two"><img src="apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+      <div id="task_watch">已浏览的任务：46&nbsp;<a href="#" onclick="information4()"><img src="pull.png"></a></div>
+      <div id="task_watch_details">
+        <div id="task_watch_one"><img src="apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_watch_two"><img src="apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+    </div>
+
+  </body>
+</html>
