@@ -268,17 +268,31 @@ body{width:1366px;height:1300px;margin:0%;padding:0%;}
         font-size:25px;
         font-family:"微软雅黑";
       }
-      #biginput_explain{
+      #biginput_p{
         position:absolute;
         margin:0%;
         padding:0%;
         width:30px;
-        height:36px;
+        height:30px;
         left:1085px;
         top:855px;
         font-size:18px;
         font-family:"微软雅黑";
         color:#cccccc;
+      }
+      #biginput_explain{
+        position:absolute;
+        margin:0%;
+        padding:0%;
+        width:180px;
+        height:36px;
+        left:1120px;
+        top:855px;
+        font-size:18px;
+        font-family:"微软雅黑";
+        color:red;
+        font-weight:bold;
+        display:none;
       }
       #read{
         position:absolute;
@@ -288,9 +302,6 @@ body{width:1366px;height:1300px;margin:0%;padding:0%;}
         height:17px;
         left:490px;
         top:1090px;
-        outline:none;
-        border:0px;
-        background:url(/statics/registerFolder/small_checkbox.png);
       }
       #detail{
         position:absolute;
@@ -324,9 +335,6 @@ body{width:1366px;height:1300px;margin:0%;padding:0%;}
         height:26px;
         left:490px;
         top:592px;
-        outline:none;
-        border:0px;
-        background:url(/statics/registerFolder/checkbox.png);
       }
       #woman{
         position:absolute;
@@ -336,9 +344,6 @@ body{width:1366px;height:1300px;margin:0%;padding:0%;}
         height:26px;
         left:560px;
         top:592px;
-        outline:none;
-        border:0px;
-        background:url(/statics/registerFolder/checkbox.png);
       }
       #keepsecret{
       position:absolute;
@@ -348,9 +353,6 @@ body{width:1366px;height:1300px;margin:0%;padding:0%;}
         height:26px;
         left:630px;
         top:592px;
-        outline:none;
-        border:0px;
-        background:url(/statics/registerFolder/checkbox.png);
       }
       #manf{
         position:absolute;

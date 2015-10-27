@@ -2,56 +2,54 @@ var isValidate=false;
 function getlength(str){
         return str.length;
       }
-      function demo(){
-        document.getElementById("read").style.background="url(/statics/registerFolder/read_select.png)";
-      }
       function demo1(){
-        document.getElementById("man").style.background="url(/statics/registerFolder/checkbox_select.png)";
-        document.getElementById("woman").style.background="url(/statics/registerFolder/checkbox.png)";
-        document.getElementById("keepsecret").style.background="url(/statics/registerFolder/checkbox.png)";
+        document.getElementById("woman").checked=false;
+        document.getElementById("keepsecret").checked=false;
       }
       function demo2(){
-        document.getElementById("woman").style.background="url(/statics/registerFolder/checkbox_select.png)";
-        document.getElementById("man").style.background="url(/statics/registerFolder/checkbox.png)";
-        document.getElementById("keepsecret").style.background="url(/statics/registerFolder/checkbox.png)";
+        document.getElementById("man").checked=false;
+        document.getElementById("keepsecret").checked=false;
       }
       function demo3(){
-        document.getElementById("keepsecret").style.background="url(/statics/registerFolder/checkbox_select.png)";
-        document.getElementById("man").style.background="url(/statics/registerFolder/checkbox.png)";
-        document.getElementById("woman").style.background="url(/statics/registerFolder/checkbox.png)";
+        document.getElementById("man").checked=false;
+        document.getElementById("woman").checked=false;
       }
       function input1(){
         document.getElementById("input1_explain").style.display="block";
       }
       function input1_judge(){
         var a=document.getElementById("uN").value;
+        var isajax=false;
         if(a==""){
           document.getElementById("input1_p").innerHTML="";
-          document.getElementById("input1_p").style.background="url(/statics/registerFolder/1.jpg)";
+          document.getElementById("input1_p").style.background="url(1.jpg)";
           document.getElementById("input1_p").style.top="230px";
           document.getElementById("input1_explain").innerHTML="邮箱不能为空！";
           document.getElementById("input1_explain").style.color="red";
           document.getElementById("input1_explain").style.top="230px";
           document.getElementById("uN").focus();
           isValidate=false;
+          isajax=false;
           return;
         }
         else{
-          isValidate=true;
+          isajax=true;
           return;
         }
-        if(isValidate){
+        if(isajax){
           $.get('', {
              '' : document.getElementById('uN').value
               }, function(document.getElementById("uN")) {
-                 if (document.getElementById("uN")) {
+                if (document.getElementById("uN")) {
                    document.getElementById("input1_p").innerHTML="";
-                   document.getElementById("input1_p").style.background="url(/statics/registerFolder/2.jpg)";
+                   document.getElementById("input1_p").style.background="url(2.jpg)";
                    document.getElementById("input1_p").style.top="225px";
                    document.getElementById("input1_explain").innerHTML="";
+                   isValidate=false;
+                   return;
                    } else {
                    document.getElementById("input1_p").innerHTML="";
-                   document.getElementById("input1_p").style.background="url(/statics/registerFolder/1.jpg)";
+                   document.getElementById("input1_p").style.background="url(1.jpg)";
                    document.getElementById("input1_p").style.top="230px";
                    document.getElementById("input1_explain").innerHTML="该邮箱已注册！";
                    document.getElementById("input1_explain").style.color="red";
@@ -71,7 +69,7 @@ function getlength(str){
         var b=getlength(a);
         if(a==""){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
+          document.getElementById("input2_p").style.background="url(1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码不能为空!";
           document.getElementById("input2_explain").style.top="320px";
@@ -81,7 +79,7 @@ function getlength(str){
         }
         else if(/ /g.test(a)){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
+          document.getElementById("input2_p").style.background="url(1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码不能含有空格!";
           document.getElementById("input2_explain").style.top="320px";
@@ -91,7 +89,7 @@ function getlength(str){
         }
         else if(b<6||b>16){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
+          document.getElementById("input2_p").style.background="url(1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码长度为6-16！";
           document.getElementById("input2_explain").style.top="320px";
@@ -101,10 +99,9 @@ function getlength(str){
         }
         else{
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(/statics/registerFolder/2.jpg)";
+          document.getElementById("input2_p").style.background="url(2.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="";
-          isValidate=true;
         };
       }
       function input3(){
@@ -115,12 +112,11 @@ function getlength(str){
         var b=document.getElementById("pW").value;
         if(b!=a){
           document.getElementById("input3_p").innerHTML="";
-          document.getElementById("input3_p").style.background="url(/statics/registerFolder/1.jpg)";
+          document.getElementById("input3_p").style.background="url(1.jpg)";
           document.getElementById("input3_p").style.top="420px";
           document.getElementById("input3_explain").innerHTML="密码不正确!";
           document.getElementById("input3_explain").style.color="red";
           document.getElementById("input3_explain").style.top="420px";
-          document.getElementById("rP").focus();
           isValidate=false;
         }
         else{
@@ -128,7 +124,6 @@ function getlength(str){
           document.getElementById("input3_p").style.background="url(/statics/registerFolder/2.jpg)";
           document.getElementById("input3_p").style.top="420px";
           document.getElementById("input3_explain").innerHTML="";
-          isValidate=true;
         }
       }
       function input4(){
@@ -173,7 +168,6 @@ function getlength(str){
           document.getElementById("input4_p").style.background="url(/statics/registerFolder/2.jpg)";
           document.getElementById("input4_p").style.top="510px";
           document.getElementById("input4_explain").innerHTML="";
-          isValidate=true;
         };
       }
       function input5(){
@@ -207,7 +201,6 @@ function getlength(str){
           document.getElementById("input5_p").style.background="url(/statics/registerFolder/2.jpg)";
           document.getElementById("input5_p").style.top="675px";
           document.getElementById("input5_explain").innerHTML="";
-          isValidate=true;
         };
       }
       function input6(){
@@ -225,6 +218,7 @@ function getlength(str){
           document.getElementById("input6_explain").style.top="775px";
           document.getElementById("pN").focus();
           isValidate=false;
+        }
         else if(b!=11){
           document.getElementById("input6_p").innerHTML="";
           document.getElementById("input6_p").style.background="url(/statics/registerFolder/1.jpg)";
@@ -240,8 +234,22 @@ function getlength(str){
           document.getElementById("input6_p").style.background="url(/statics/registerFolder/2.jpg)";
           document.getElementById("input6_p").style.top="770px";
           document.getElementById("input6_explain").innerHTML="";
-          isValidate=true;
         };
+      }
+      function input_textarea(){
+        var a = document.getElementById("it").value;
+        var b = getlength(a);
+        if(b<20||b>40){
+          document.getElementById("biginput_p").innerHTML="";
+          document.getElementById("biginput_p").style.background="url(/statics/registerFolder/1.jpg)"
+          document.getElementById("biginput_explain").style.display="block";
+          isValidate="false";
+        }
+        else{
+          document.getElementById("biginput_p").innerHTML="";
+          document.getElementById("biginput_p").style.background="url(/statics/registerFolder/2.jpg)"
+          document.getElementById("biginput_explain").style.display="none";
+        }
       }
       function submit(){
         return isValidate;

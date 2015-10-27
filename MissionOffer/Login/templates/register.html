@@ -30,8 +30,9 @@
      <div id="input6_p">*</div>
      <div id="input6_explain">便于交易联系</div>
   	 <div id="biginput"></div>
-     <a id="biginput_explain" style="color:red;">*</a>
-  	 <input type="text" name="usrname" id="uN" onfocus="input1()" onblur="input1_judge()">
+     <div id="biginput_explain">字符范围为10-20！</div>
+     <div id="biginput_p" style="color:red;">*</div>
+  	 <input type="email" name="usrname" id="uN" onfocus="input1()">
   	 <input type="password" name="password" id="pW" onfocus="input2()"
      onblur="input2_judge()">
   	 <input type="password" name="repassword" id="rP"
@@ -42,16 +43,16 @@
      onfocus="input5()" onblur="input5_judge()">
   	 <input type="text" name="phone_number" id="pN" onfocus="input6()"
      onblur="input6_judge()">
-     <textarea rows="8" cols="30" name="introduce" id="it" value="姓名、班级、专业等、不少于10个字"></textarea>
-     <div id="read" name="rd" onclick="demo()"></div>
-     <div id="man" name="man" onclick="demo1()"></div>
-     <div id="woman" name="man" onclick="demo2()"></div>
-     <div id="keepsecret" name="ks" onclick="demo3()"></div>
+     <textarea rows="8" cols="30" name="introduce" id="it" value="姓名、班级、专业等、不少于10个字" placeholder="（姓名、班级、专业等，不少于10个字）" onblur="input_textarea()"></textarea>
+     <input type="checkbox" name="read" id="read">
+     <input id="man" name="man" type="checkbox" onclick="demo1()" value="男"></div>
+     <input id="woman" name="man" type="checkbox" onclick="demo2()" value="女"></div>
+     <input id="keepsecret" name="ks" type="checkbox" onclick="demo3()" value="保密"></div>
      <div id="manf">男</div>
      <div id="womanf">女</div>
      <div id="keepsecretf">保密</div>
      <div id="detail">我已阅读并同意相关服务条款和隐私政策</div>
-     <div type="submit" id="sb" name="submit" value="">
+     <input type="submit" id="sb" name="submit" value="" onSubmit="submit()">
     </form>
   </body>
 </html>
