@@ -14,7 +14,7 @@
         height:45px;
         width:1366px;
         font-size:180%;
-        background:url(top.png) no-repeat;
+        background:url(/statics/userCenter/top.png) no-repeat;
         
       }
      #boss2{
@@ -52,7 +52,7 @@
         left:0%;
         height:95px;
         width:1366px;
-        background:url(boss4.png) no-repeat;
+        background:url(/statics/userCenter/boss4.png) no-repeat;
       }
       #back{
         margin:0%;
@@ -96,7 +96,7 @@
         left:128px;
         height:582px;
         width:237px;
-        background:url(left.png);
+        background:url(/statics/userCenter/left.png);
       }
       #my_information_input1{
         margin:0%;

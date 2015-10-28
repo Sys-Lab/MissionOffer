@@ -1,0 +1,84 @@
+<html>
+  <head>
+  	<title></title>
+  	<meta charset="utf-8">
+    <link rel="StyleSheet" href="/statics/userCenter/usercenter.css" type="text/css">
+    <style>
+      a{text-decoration:none;}
+      body{margin:0px;}
+    </style>
+    <script src="/statics/userCenter/usercenter.js"></script>
+  </head>
+  <body>
+    <script src="/statics/frameworkFolder/framework.js"></script>
+    <div id="all">
+  	<div id="boss1"></div>
+    <div id="boss2">Welcome to User Center</div>
+    {% if usrname != ''%}
+    <div id="boss3">
+      <a href="/userCenter" class="login" style="color:white">{{usrname}}</a>/
+      <a href="/logout" class="register" style="color:white">退出</a>
+    </div>
+    {%else%}
+    <div id="boss3">
+      <a href="/login" class="login" style="color:white">登陆</a>/
+      <a href="/register" class="register" style="color:white">注册</a>
+    </div>
+    {%endif%}
+    <div id="boss4"></div>
+    <div id="container">
+      <a href="#" id="back">主页&gt;&gt;</a>
+      <div id="word_usercenter">个人中心</div>
+    </div>
+    <div id="condition_p">
+      <div id="my_information_input1"><a href="#" id="my_information" onclick="left_input1()">个人信息</a></div>
+      <div id="my_task_input2"><a href="#" id="my_task" onclick="left_input2()">我的任务</a></div>
+    </div>
+    <div id="main_information">
+      <div id="my_name">账号：{{user.usrname}}</div>
+      <div id="my_email">邮箱：{{user.email}}</div>
+      <div id="my_sex">性别：{{user.sex}}</div>
+      <div id="my_number">学号：{{user.idNumber}}</div>
+      <div id="my_phone">电话：{{user.phonenumber}}</div>
+      <div id="my_introduce_w">自我介绍：</div>
+      <div id="my_introduce">{{user.eval}}</div>
+    </div>
+    <div id="main_task">
+      <div id="task_published">已发布的任务：{{mylen}}&nbsp;<a href="#" onclick="information1()"><img src="/statics/userCenter/pull.png"></a></div>
+      <div id="task_published_details">
+        {% for i,k in myMissionList %}
+          {% url 'viewMission' i.id as missionURL %}
+          {% if k == 1 %}
+            <a href="{{missionURL}}">
+            <div id="task_published_one"><img src="/statics/userCenter/apl(blue).png">&nbsp;{{i.title}}</div></a>
+          {% else%}
+            <a href="{{missionURL}}">
+            <div id="task_published_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;{{i.title}}</div></a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div id="task_gotten">已接受的任务：{{aclen}}&nbsp;<a href="#" onclick="information2()"><img src="/statics/userCenter/pull.png"></a></div>
+      <div id="task_gotten_details">
+        {% for i,k in acMissionList %}
+          {% url 'viewMission' i.id as missionURL %}
+          {% if k == 1 %}
+        <a href="{{missionURL}}">
+        <div id="task_gotton_one"><img src="/statics/userCenter/apl(blue).png">&nbsp;{{i.title}}</div></a>
+        {% else%}
+        <a href="{{missionURL}}">
+        <div id="task_gotton_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;{{i.title}}</div></a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div id="task_done_details">
+        <div id="task_done_one"><img src="/statics/userCenter/apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_done_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+      <div id="task_watch_details">
+        <div id="task_watch_one"><img src="/statics/userCenter/apl(blue).png">&nbsp;桂苑打包一份饭菜</div>
+        <div id="task_watch_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
+      </div>
+    </div>
+
+  </body>
+</html>

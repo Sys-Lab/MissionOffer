@@ -41,17 +41,18 @@
     </div>
     <div id="boss10">
       <div id="boss101"><img src="/statics/frameworkFolder/all.png"></div>
-      <div id="boss102"><a href="#" onclick="lost_p()"><img src="/statics/frameworkFolder/lost_pressed.png" id="boss1022"></a></div>
-      <div id="boss103"><a href="#" onclick="ding_p()"><img src="/statics/frameworkFolder/dining.png" id="boss1033"></a></div>
-      <div id="boss104"><a href="#" onclick="super_p()"><img src="/statics/frameworkFolder/super.png" id="boss1044"></a></div>
-      <div id="boss105"><a href="#" onclick="print_p()"><img src="/statics/frameworkFolder/print.png" id="boss1055"></a></div>
-      <div id="boss106"><a href="#" onclick="out_p()"><img src="/statics/frameworkFolder/out.png" id="boss1066"></a></div>
+      <div id="boss102"><a href="/index/0/" onclick="lost_p()"><img src="/statics/frameworkFolder/lost_pressed.png" id="boss1022"></a></div>
+      <div id="boss103"><a href="/index/1/" onclick="ding_p()"><img src="/statics/frameworkFolder/dining.png" id="boss1033"></a></div>
+      <div id="boss104"><a href="/index/2/" onclick="super_p()"><img src="/statics/frameworkFolder/super.png" id="boss1044"></a></div>
+      <div id="boss105"><a href="/index/3/" onclick="print_p()"><img src="/statics/frameworkFolder/print.png" id="boss1055"></a></div>
+      <div id="boss106"><a href="/index/4/" onclick="out_p()"><img src="/statics/frameworkFolder/out.png" id="boss1066"></a></div>
     </div>
+
     <div id="boss11">
-      <div id="boss111"><a href="#" id="all_a" onClick="all_demo()" style="color:#979797;">全部</a></div>
-      <div id="boss112"><a href="#" id="get_a" onClick="get_demo()" style="color:#979797;">待接受</a></div>
-      <div id="boss113"><a href="#" id="ing_a" onClick="ing_demo()" style="color:#979797;">进行中</a></div>
-      <div id="boss114"><a href="#" id="done_a" onClick="done_demo()" style="color:#979797;">已完成</a></div>
+      <div id="boss111"><a href=/index/{{type}}/6/ id="all_a" onClick="all_demo()" style="color:#979797;">全部</a></div>
+      <div id="boss112"><a href=/index/{{type}}/0/ id="get_a" onClick="get_demo()" style="color:#979797;">待接受</a></div>
+      <div id="boss113"><a href=/index/{{type}}/1/ id="ing_a" onClick="ing_demo()" style="color:#979797;">进行中</a></div>
+      <div id="boss114"><a href=/index/{{type}}/2/ id="done_a" onClick="done_demo()" style="color:#979797;">已完成</a></div>
     </div>
     <div id="boss12">
       <div id="boss121"><img src="/statics/frameworkFolder/ranking.png"></div>
@@ -70,37 +71,37 @@
         width:614px;
         top:-350px;
         left:380px;
-        background:#F3F3F3;">
-    <div id={{i.id}}condition>{{i.get_status_display}}</div>
+        background:url(/statics/frameworkFolder/part2.png);">
+    <div id={{i.id}}condition style="left:5px;width:100px;">{{i.get_status_display}}</div>
     <div id={{i.id}}title style="margin:0px;
         padding:0%;
         position:relative;
         height:32px;
-        width:200px;
+        width:340px;
         top:0px;
         left:40px;
         color:#979797;
-        font-size:30px;
+        font-size:25px;
         font-weight:bold;">{{i.title}}</div>
     <div id={{i.id}}taskowner_l style="margin:0px;
         padding:0%;
         position:relative;
         height:20px;
-        width:50px;
+        width:80px;
         top:-30px;
-        left:390px;
-        color:red;
-        font-size:10px;
+        left:380px;
+        color:#979797;
+        font-size:15px;
         font-weight:bold;">悬赏人：</div>
     <div id={{i.id}}taskowner style="
         margin:0px;
         padding:0%;
         position:relative;
         height:20px;
-        width:55px;
-        top:-55px;
-        left:435px;
-        color:red;
+        width:70px;
+        top:-50px;
+        left:440px;
+        color:#0099CC;
         font-size:18px;
         font-weight:bold;">{{i.employer}}</div>
     <div id={{i.id}}task_time style="
@@ -108,11 +109,11 @@
         padding:0%;
         position:relative;
         height:20px;
-        width:70px;
+        width:75px;
         top:-75px;
-        left:540px;
-        color:red;
-        font-size:10px;
+        left:535px;
+        color:#979797;
+        font-size:12px;
         font-weight:bold;">{{i.deadline}}</div>
     <div id={{i.id}}task_dscb style="
         margin:0px;
@@ -122,9 +123,8 @@
         width:450px;
         top:-40px;
         left:80px;
-        color:red;
+        color:#979797;
         font-size:18px;
-        font-weight:bold;
         background:;">{{i.context}}</div>
     <div id={{i.id}}task_b style="
         margin:0px;
@@ -134,7 +134,7 @@
         width:60px;
         top:-40px;
         left:430px;
-        color:red;
+        color:#979797;
         font-size:20px;
         font-weight:bold;">悬赏:</div>
     <div id={{i.id}}task_money style="
@@ -148,6 +148,18 @@
         color:red;
         font-size:30px;
         font-weight:bold;">{{i.reward}}￥</div>
+    <div id={{i.id}}task_class_w style="
+        margin:0px;
+        padding:0%;
+        position:relative;
+        position:relative;
+        height:20px;
+        width:120px;
+        top:-100px;
+        left:5px;
+        color:#979797;
+        font-size:20px;
+        font-weight:bold;">任务类型：</div>
     <div id={{i.id}}task_class style="
         margin:0px;
         padding:0%;
@@ -155,9 +167,9 @@
         height:40px;
         width:140px;
         top:-120px;
-        left:35px;
-        color:red;
-        font-size:30px;
+        left:110px;
+        color:#979797;
+        font-size:20px;
         font-weight:bold;">{{i.get_type_display}}</div>
     </div>
     </a>
