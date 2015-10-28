@@ -50,7 +50,13 @@
         <a href={{attachmentURL}}>{{i.originName}}</a>
       {% endfor %}
       </div>
+      {% if buttonMark == 1 %}
       <input type="submit" id="button" value="接受"><div>
+        {% elif buttonMark == 2 %}
+        <input type="submit" id="button" value="完成"><div>
+        {% elif buttonMark == 3 %}
+        <input type="submit" id="button" value="通过"><div>
+        {% endif %}
     </form>
     </div>
     <div id="hiscondition">

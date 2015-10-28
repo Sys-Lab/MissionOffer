@@ -27,7 +27,7 @@
     {%endif%}
     <div id="boss4"></div>
     <div id="container">
-      <a href="#" id="back">主页&gt;&gt;</a>
+      <a href="/index/" id="back">主页&gt;&gt;</a>
       <div id="word_usercenter">个人中心</div>
     </div>
     <div id="condition_p">
@@ -37,6 +37,7 @@
     <div id="main_information">
       <div id="my_name">账号：{{user.usrname}}</div>
       <div id="my_email">邮箱：{{user.email}}</div>
+      <div id="my_money">金钱：{{user.money}}</div>
       <div id="my_sex">性别：{{user.sex}}</div>
       <div id="my_number">学号：{{user.idNumber}}</div>
       <div id="my_phone">电话：{{user.phonenumber}}</div>
@@ -59,7 +60,7 @@
       </div>
       <div id="task_gotten">已接受的任务：{{aclen}}&nbsp;<a href="#" onclick="information2()"><img src="/statics/userCenter/pull.png"></a></div>
       <div id="task_gotten_details">
-        {% for i,k in acMissionList %}
+        {% for i,k in acList %}
           {% url 'viewMission' i.id as missionURL %}
           {% if k == 1 %}
         <a href="{{missionURL}}">

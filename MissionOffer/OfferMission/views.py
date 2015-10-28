@@ -117,12 +117,59 @@ def viewMissionMethod(request, missionID):
     if (mission):
         mission = mission[0]
         usrname = request.session.get('usrname', '')
+        buttonMark = 0
+        if usrname:
+            nowUser = User.objects.filter(usrname__exact=usrname)[0]
+
+            if mission.status == '0':
+                if mission.employer != nowUser:
+                    buttonMark = 1
+            if mission.status == '1':
+                if mission.employee == nowUser:
+                    buttonMark = 2
+                else:
+                    buttonMark = 0
+            if mission.status == '2':
+                if mission.employer == nowUser:
+                    buttonMark = 3
+                else:
+                    buttonMark = 0
+            if mission.status == '3':
+                buttonMark = 0
+
+            if request.method == 'POST':
+                print('***************')
+                print(int(missionID))
+                print('***************')
+                if buttonMark == 1:
+                    if nowUser.money < mission.fine:
+                        return HttpResponse('资金不足以支付押金！')
+                    nowUser.money -= mission.fine
+                    nowUser.save()
+                    mission.employee = nowUser
+                    mission.status = '1'
+                    mission.save()
+                elif buttonMark == 2:
+                    mission.status = '2'
+                    mission.save()
+                elif buttonMark == 3:
+                    mission.status = '3'
+                    mission.save()
+                    nowUser.money += (mission.reward + mission.fine)
+                return HttpResponseRedirect('/mission/'+missionID+'/')
+
+
         leftDays = (mission.deadline - datetime.now()).days
         attachmentList = mission.attachment_set.all()
-        print(attachmentList)
-        print(leftDays)
+        # print(attachmentList)
+        # print(leftDays)
+        print(buttonMark)
         # return render_to_response('viewMission.html',{'mission':mission})
-        return render_to_response('taskdetails.html',{'usrname': usrname,'mission':mission,'leftDays':leftDays,'attachmentList':attachmentList})
+        return render_to_response('taskdetails.html',{'usrname': usrname,
+                                                      'mission':mission,
+                                                      'leftDays':leftDays,
+                                                      'attachmentList':attachmentList,
+                                                      'buttonMark':buttonMark})
     else:
         return HttpResponse('任务不存在！')
 
