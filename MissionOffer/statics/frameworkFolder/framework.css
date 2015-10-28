@@ -631,4 +631,11 @@
       #task_condition{
         display:none;
       }
+      #copyright{
+        clear:both;
+        background:#f6f6f6;
+        margin-top:20px;
+        color:#999;
+        text-align: center;
+      }
 </style>
