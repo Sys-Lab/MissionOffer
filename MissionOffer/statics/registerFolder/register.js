@@ -22,7 +22,7 @@ function getlength(str){
         var isajax=false;
         if(a==""){
           document.getElementById("input1_p").innerHTML="";
-          document.getElementById("input1_p").style.background="url(1.jpg)";
+          document.getElementById("input1_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input1_p").style.top="230px";
           document.getElementById("input1_explain").innerHTML="邮箱不能为空！";
           document.getElementById("input1_explain").style.color="red";
@@ -42,14 +42,13 @@ function getlength(str){
               }, function(document.getElementById("uN")) {
                 if (document.getElementById("uN")) {
                    document.getElementById("input1_p").innerHTML="";
-                   document.getElementById("input1_p").style.background="url(2.jpg)";
+                   document.getElementById("input1_p").style.background="url(/statics/registerFolder/2.jpg)";
                    document.getElementById("input1_p").style.top="225px";
                    document.getElementById("input1_explain").innerHTML="";
-                   isValidate=false;
                    return;
                    } else {
                    document.getElementById("input1_p").innerHTML="";
-                   document.getElementById("input1_p").style.background="url(1.jpg)";
+                   document.getElementById("input1_p").style.background="url(/statics/registerFolder/1.jpg)";
                    document.getElementById("input1_p").style.top="230px";
                    document.getElementById("input1_explain").innerHTML="该邮箱已注册！";
                    document.getElementById("input1_explain").style.color="red";
@@ -69,7 +68,7 @@ function getlength(str){
         var b=getlength(a);
         if(a==""){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(1.jpg)";
+          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码不能为空!";
           document.getElementById("input2_explain").style.top="320px";
@@ -79,7 +78,7 @@ function getlength(str){
         }
         else if(/ /g.test(a)){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(1.jpg)";
+          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码不能含有空格!";
           document.getElementById("input2_explain").style.top="320px";
@@ -89,7 +88,7 @@ function getlength(str){
         }
         else if(b<6||b>16){
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(1.jpg)";
+          document.getElementById("input2_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="密码长度为6-16！";
           document.getElementById("input2_explain").style.top="320px";
@@ -99,7 +98,7 @@ function getlength(str){
         }
         else{
           document.getElementById("input2_p").innerHTML="";
-          document.getElementById("input2_p").style.background="url(2.jpg)";
+          document.getElementById("input2_p").style.background="url(/statics/registerFolder/2.jpg)";
           document.getElementById("input2_p").style.top="320px";
           document.getElementById("input2_explain").innerHTML="";
         };
@@ -112,7 +111,7 @@ function getlength(str){
         var b=document.getElementById("pW").value;
         if(b!=a){
           document.getElementById("input3_p").innerHTML="";
-          document.getElementById("input3_p").style.background="url(1.jpg)";
+          document.getElementById("input3_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input3_p").style.top="420px";
           document.getElementById("input3_explain").innerHTML="密码不正确!";
           document.getElementById("input3_explain").style.color="red";
@@ -133,6 +132,7 @@ function getlength(str){
         var a=document.getElementById("nN").value;
         var b=getlength(a);
         var re=/[^\w\u4e00-\u9fa5]/g;
+        var isajax=false;
         if(a==""){
           document.getElementById("input4_p").innerHTML="";
           document.getElementById("input4_p").style.background="url(/statics/registerFolder/1.jpg)";
@@ -141,6 +141,7 @@ function getlength(str){
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
+          isajax=false;
           isValidate=false;
         }
         else if(/ /g.test(a)||re.test(a)){
@@ -151,6 +152,7 @@ function getlength(str){
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
+          isajax=false;
           isValidate=false;
         }
         else if(b<6||b>16){
@@ -161,14 +163,35 @@ function getlength(str){
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
+          isajax=false;
           isValidate=false;
         }
         else{
-          document.getElementById("input4_p").innerHTML="";
-          document.getElementById("input4_p").style.background="url(/statics/registerFolder/2.jpg)";
-          document.getElementById("input4_p").style.top="510px";
-          document.getElementById("input4_explain").innerHTML="";
-        };
+          isajax=true;
+        }
+        if(isajax){
+          $.get('', {
+             '' : document.getElementById('nN').value
+              }, function(document.getElementById("nN")) {
+                if (document.getElementById("nN")) {
+                   document.getElementById("input4_p").innerHTML="";
+                   document.getElementById("input4_p").style.background="url(/statics/registerFolder/2.jpg)";
+                   document.getElementById("input4_p").style.top="510px";
+                   document.getElementById("input4_explain").innerHTML="";
+                   return;
+                   } else {
+                   document.getElementById("input4_p").innerHTML="";
+                   document.getElementById("input4_p").style.background="url(1.jpg)";
+                   document.getElementById("input4_p").style.top="230px";
+                   document.getElementById("input4_explain").innerHTML="该邮箱已注册！";
+                   document.getElementById("input4_explain").style.color="red";
+                   document.getElementById("input4_explain").style.top="515px";
+                   document.getElementById("nN").focus();
+                   isValidate=false;
+                   return;
+                   }
+            });
+        }
       }
       function input5(){
         document.getElementById("input5_explain").style.display="block";
