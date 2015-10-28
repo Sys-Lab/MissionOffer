@@ -28,7 +28,8 @@
         if(isValidate){
           $.post('/loginCheck/', {
             'UN' : document.getElementById('usrName').value,
-            'PW' : document.getElementById('passWord').value
+            'PW' : document.getElementById('passWord').value,
+            'AUTO' : document.getElementById('lg').value
             }, function(result) {
               console.log(result);
               if (result['success']) {

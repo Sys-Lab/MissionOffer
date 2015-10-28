@@ -34,10 +34,13 @@ def loginCheckMethod(request):
                     print('用户未激活')
                     # return HttpResponse()
                     return JsonResponse(result)
-                # print('##########')
+
                 result['success'] = True
                 result['reason'] = '登录成功'
                 request.session['usrname'] = un
+                if not ('AUTO' in request.POST):
+                    print('##########')
+                    request.session.set_expiry(0)
                 return JsonResponse(result)
                 # return HttpResponseRedirect('/index')
             else:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
