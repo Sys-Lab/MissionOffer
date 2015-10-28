@@ -28,6 +28,7 @@
     <a href="/index" id="back">主页&gt;&gt;</a>
     <div id="task_details_word">任务详情</div>
     <div id="main_picture">
+    <form action="#" method="post">
       <div id="title">{{mission.title}}<div>
       <div id="taskowner_l">悬赏人：</div>
       <div id="taskowner">{{mission.employer}}</div>
@@ -49,7 +50,8 @@
         <a href={{attachmentURL}}>{{i.originName}}</a>
       {% endfor %}
       </div>
-      <input type="button" id="button" value="接受"><div>
+      <input type="submit" id="button" value="接受"><div>
+    </form>
     </div>
     <div id="hiscondition">
       <div id="lv">10</div>
