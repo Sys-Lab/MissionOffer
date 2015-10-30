@@ -2,7 +2,7 @@
   <head>
   	<title></title>
   	<meta charset="utf-8">
-    <link rel="StyleSheet" href="usercenter.css" type="text/css">
+    <link rel="StyleSheet" href="/statics/userCenter/usercenter.css" type="text/css">
     <style>
       a{text-decoration:none;}
       body{margin:0px;}
@@ -38,7 +38,6 @@
     <div id="main_information">
       <div id="my_name">账号：{{user.usrname}}</div>
       <div id="my_email">邮箱：{{user.email}}</div>
-      <div id="my_money">金钱：{{user.money}}</div>
       <div id="my_sex">性别：{{user.sex}}</div>
       <div id="my_number">学号：{{user.idNumber}}</div>
       <div id="my_phone">电话：{{user.phonenumber}}</div>
@@ -46,7 +45,7 @@
       <div id="my_introduce">{{user.eval}}</div>
     </div>
     <div id="main_task">
-      <div id="task_published">已发布的任务：{{mylen}}&nbsp;<a href="#" onclick="information1()"><img src="pull.png"></a></div>
+      <div id="task_published">已发布的任务：{{mylen}}&nbsp;<a href="#" onclick="information1()"><img src="/statics/userCenter/pull.png"></a></div>
       <div id="task_published_details">
         {% for i,k in myMissionList %}
           {% url 'viewMission' i.id as missionURL %}
@@ -81,11 +80,11 @@
         <div id="task_watch_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
       </div>
     </div>
-    <form action="#" method="post">
+    <form action="/recharge/" method="post">
     <div id="main_wallet">
       <img src="/statics/userCenter/wallet.png" id="wallet_picture">
       <div id="wallet_word">你的余额为：￥</div>
-      <div id="wallet_number">50</div>
+      <div id="wallet_number">{{user.money}}</div>
       <div id="wallet_way_container">
         支付方式：<input type="radio" id="alipay" name="payway" value="1">&nbsp;&nbsp;支付宝&nbsp;&nbsp;
         <input type="radio" id="internetbank" name="payway" value="2">&nbsp;&nbsp;网上银行 &nbsp;&nbsp;  

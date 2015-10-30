@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -36,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'Login',
     'OfferMission',
 )
@@ -122,3 +125,7 @@ SERVER_EMAIL = '583268345@qq.com'
 
 # MY_SITE_URL = 'http://192.168.3.135:8000'
 MY_SITE_URL = 'http://192.168.1.115:8000'
+
+CRONJOBS = [
+    ('*/1 * * * *', 'MissionOffer.OfferMission.cron.deadlineMethod')
+]

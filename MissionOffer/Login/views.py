@@ -216,3 +216,20 @@ def userCenterMethod(request):
                                                  'mylen':mylen,
                                                  'aclen':aclen,
                                                  'acList':acList})
+
+def rechargeMethod(request):
+    usrname = request.session.get('usrname', '')
+    try:
+        nowUser = User.objects.get(usrname__exact=usrname)
+    except:
+        return HttpResponseRedirect('/login/')
+    if request.method == 'POST':
+        if not 'payway' in request.POST:
+            return HttpResponse('请选择一种充值方式!')
+        money = int(request.POST['money_number'])
+        if money <= 0:
+            return HttpResponse('充值金额必须为正整数!')
+        nowUser.money += money
+        nowUser.save()
+        return HttpResponseRedirect('/userCenter/')
+    return HttpResponseRedirect('/userCenter/')
