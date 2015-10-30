@@ -3,7 +3,7 @@ from Login.models import User
 
 
 class Mission(models.Model):
-    statusChoices = (('0', u'待接收'),('1', u'进行中'),('2','待审核'),('3', u'已完成'))
+    statusChoices = (('0', u'待接收'),('1', u'进行中'),('2','待审核'),('3', u'已完成'),('4',u'失败'))
     typeChoices = (('0', u'寻找失物'),('1', u'食堂带饭'),('2', u'超市购物'),('3',u'文印中心'),('4',u'校外任务'),('5',u'其他'))
     status = models.CharField(max_length=20,choices=statusChoices,default='0')  # 任务状态
     type = models.CharField(max_length=20,choices=typeChoices,default='0')

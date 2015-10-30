@@ -123,9 +123,12 @@ EMAIL_TIMEOUT = 45
 #管理员站点
 SERVER_EMAIL = '583268345@qq.com'
 
+MY_SITE_URL = 'http://192.168.2.109:8000'
 # MY_SITE_URL = 'http://192.168.3.135:8000'
-MY_SITE_URL = 'http://192.168.1.115:8000'
+# MY_SITE_URL = 'http://192.168.1.115:8000'
 
 CRONJOBS = [
+    ('*/1 * * * *', 'MissionOffer.OfferMission.cron.tryUseCrontab'),
+    ('*/1 * * * *', 'MissionOffer.OfferMission.cron.tryUseCrontab2'),
     ('*/1 * * * *', 'MissionOffer.OfferMission.cron.deadlineMethod')
 ]
