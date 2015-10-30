@@ -2,18 +2,7 @@ var isValidate=false;
 function getlength(str){
         return str.length;
       }
-      function demo1(){
-        document.getElementById("woman").checked=false;
-        document.getElementById("keepsecret").checked=false;
-      }
-      function demo2(){
-        document.getElementById("man").checked=false;
-        document.getElementById("keepsecret").checked=false;
-      }
-      function demo3(){
-        document.getElementById("man").checked=false;
-        document.getElementById("woman").checked=false;
-      }
+
       function input1(){
         document.getElementById("input1_explain").style.display="block";
       }
@@ -33,12 +22,16 @@ function getlength(str){
           return;
         }
         else{
+          document.getElementById("input1_p").innerHTML="";
+          document.getElementById("input1_p").style.background="url(/statics/registerFolder/2.jpg)";
+          document.getElementById("input1_p").style.top="225px";
+          document.getElementById("input1_explain").innerHTML="";
           isajax=true;
           return;
         }
         if(isajax){
-          $.get('', {
-             '' : document.getElementById('uN').value
+          $.post('/register/', {
+             'usrname' : document.getElementById('uN').value
               }, function(document.getElementById("uN")) {
                 if (document.getElementById("uN")) {
                    document.getElementById("input1_p").innerHTML="";
@@ -58,7 +51,7 @@ function getlength(str){
                    return;
                    }
             });
-        }  
+        }
       }
       function input2(){
         document.getElementById("input2_explain").style.display="block";
@@ -137,7 +130,7 @@ function getlength(str){
           document.getElementById("input4_p").innerHTML="";
           document.getElementById("input4_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input4_p").style.top="510px";
-          document.getElementById("input4_explain").innerHTML="昵称不能为空!";
+          document.getElementById("input4_explain").innerHTML="帐号不能为空!";
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
@@ -148,7 +141,7 @@ function getlength(str){
           document.getElementById("input4_p").innerHTML="";
           document.getElementById("input4_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input4_p").style.top="510px";
-          document.getElementById("input4_explain").innerHTML="昵称不能含有空格和非法字符!";
+          document.getElementById("input4_explain").innerHTML="帐号不能含有空格和非法字符!";
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
@@ -159,7 +152,7 @@ function getlength(str){
           document.getElementById("input4_p").innerHTML="";
           document.getElementById("input4_p").style.background="url(/statics/registerFolder/1.jpg)";
           document.getElementById("input4_p").style.top="510px";
-          document.getElementById("input4_explain").innerHTML="昵称长度为6-16！";
+          document.getElementById("input4_explain").innerHTML="帐号长度为6-16！";
           document.getElementById("input4_explain").style.top="515px";
           document.getElementById("input4_explain").style.color="red";
           document.getElementById("nN").focus();
@@ -167,11 +160,15 @@ function getlength(str){
           isValidate=false;
         }
         else{
+          document.getElementById("input4_p").innerHTML="";
+          document.getElementById("input4_p").style.background="url(/statics/registerFolder/2.jpg)";
+          document.getElementById("input4_p").style.top="510px";
+          document.getElementById("input4_explain").innerHTML="";
           isajax=true;
         }
         if(isajax){
-          $.get('', {
-             '' : document.getElementById('nN').value
+          $.post('/register/', {
+             'nickname' : document.getElementById('nN').value
               }, function(document.getElementById("nN")) {
                 if (document.getElementById("nN")) {
                    document.getElementById("input4_p").innerHTML="";
@@ -275,5 +272,6 @@ function getlength(str){
         }
       }
       function submit(){
+
         return isValidate;
       }

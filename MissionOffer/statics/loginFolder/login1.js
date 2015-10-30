@@ -24,12 +24,17 @@
           document.getElementById("usrname_false").style.display="none";
           isValidate=true;
         }
-
+        if(document.getElementById("lg").checked){
+          var condition="on";
+        }
+        else{
+          condition="off";
+        }
         if(isValidate){
           $.post('/loginCheck/', {
             'UN' : document.getElementById('usrName').value,
             'PW' : document.getElementById('passWord').value,
-            'AUTO' : document.getElementById('lg').value
+            'AUTO' : condition
             }, function(result) {
               console.log(result);
               if (result['success']) {

@@ -88,6 +88,30 @@
         font-family:"微软雅黑";
         font-size:22px;
       }
+      #condition{
+        margin:0%;
+        padding:0%;
+        position:absolute;
+        top:100px;
+        left:590px;
+        height:30px;
+        width:120px;
+        color:rgb(153,153,153);
+        font-family:"微软雅黑";
+        font-size:22px;
+      }
+      #condition_r{
+        margin:0%;
+        padding:0%;
+        position:absolute;
+        top:100px;
+        left:700px;
+        height:30px;
+        width:80px;
+        color:rgb(100,200,100);
+        font-family:"微软雅黑";
+        font-size:22px;
+      }
       #title{
         margin:0%;
         padding:0%;
@@ -119,7 +143,7 @@
         top:10px;
         left:660px;
         height:28px;
-        width:100px;
+        width:130px;
         color:rgb(0,153,204);
         font-family:"微软雅黑";
         font-size:25px;
@@ -131,7 +155,7 @@
         top:50px;
         left:560px;
         height:25px;
-        width:150px;
+        width:170px;
         color:rgb(153,153,153);
         font-family:"微软雅黑";
         font-size:20px;
@@ -177,7 +201,7 @@
         padding:0%;
         position:absolute;
         top:85px;
-        left:190px;
+        left:200px;
         height:30px;
         width:60px;
         color:rgb(153,153,153);
@@ -189,7 +213,7 @@
         padding:0%;
         position:absolute;
         top:85px;
-        left:245px;
+        left:255px;
         height:25px;
         width:10px;
         color:rgb(204,51,51);
@@ -201,7 +225,7 @@
         padding:0%;
         position:absolute;
         top:70px;
-        left:270px;
+        left:280px;
         height:60px;
         width:120px;
         color:rgb(204,51,51);
@@ -235,7 +259,7 @@
         padding:0%;
         position:absolute;
         top:150px;
-        left:680px;
+        left:700px;
         height:60px;
         width:50px;
         color:rgb(254,167,63);

@@ -47,7 +47,7 @@
       document.getElementById("boss1044").src="/statics/frameworkFolder/super.png";
       document.getElementById("boss1055").src="/statics/frameworkFolder/print.png";
       document.getElementById("boss1066").src="/statics/frameworkFolder/out.png";
-      document.getElementById("boss101").style.left="25%";
+      document.getElementById("boss101").style.left="22%";
       document.getElementById("boss102").style.left="30%";
       document.getElementById("boss103").style.left="25%";
       document.getElementById("boss104").style.left="23%";
@@ -62,7 +62,7 @@
       document.getElementById("boss1044").src="/statics/frameworkFolder/super.png";
       document.getElementById("boss1055").src="/statics/frameworkFolder/print.png";
       document.getElementById("boss1066").src="/statics/frameworkFolder/out.png";
-      document.getElementById("boss101").style.left="25%";
+      document.getElementById("boss101").style.left="22%";
       document.getElementById("boss102").style.left="21%";
       document.getElementById("boss103").style.left="34%";
       document.getElementById("boss104").style.left="23%";
@@ -77,7 +77,7 @@
       document.getElementById("boss1044").src="/statics/frameworkFolder/super_pressed.png";
       document.getElementById("boss1055").src="/statics/frameworkFolder/print.png";
       document.getElementById("boss1066").src="/statics/frameworkFolder/out.png";
-      document.getElementById("boss101").style.left="25%";
+      document.getElementById("boss101").style.left="22%";
       document.getElementById("boss102").style.left="21%";
       document.getElementById("boss103").style.left="25%";
       document.getElementById("boss104").style.left="32%";
@@ -92,7 +92,7 @@
       document.getElementById("boss1044").src="/statics/frameworkFolder/super.png";
       document.getElementById("boss1055").src="/statics/frameworkFolder/print_pressed.png";
       document.getElementById("boss1066").src="/statics/frameworkFolder/out.png";
-      document.getElementById("boss101").style.left="25%";
+      document.getElementById("boss101").style.left="22%";
       document.getElementById("boss102").style.left="21%";
       document.getElementById("boss103").style.left="25%";
       document.getElementById("boss104").style.left="23%";
@@ -107,7 +107,7 @@
       document.getElementById("boss1044").src="/statics/frameworkFolder/super.png";
       document.getElementById("boss1055").src="/statics/frameworkFolder/print.png";
       document.getElementById("boss1066").src="/statics/frameworkFolder/out_pressed.png";
-      document.getElementById("boss101").style.left="25%";
+      document.getElementById("boss101").style.left="22%";
       document.getElementById("boss102").style.left="21%";
       document.getElementById("boss103").style.left="25%";
       document.getElementById("boss104").style.left="23%";

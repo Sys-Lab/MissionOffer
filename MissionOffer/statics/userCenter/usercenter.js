@@ -27,7 +27,7 @@ function information1(){
 	document.getElementById("task_gotten_details").style.display="none";
 	document.getElementById("task_done_details").style.display="none";
 	document.getElementById("task_watch_details").style.display="none";
-	document.getElementById("task_gotten").style.top="310px";
+	document.getElementById("task_gotten").style.top="410px";
 	document.getElementById("task_done").style.top="369px";
 	document.getElementById("task_watch").style.top="418px";
 }

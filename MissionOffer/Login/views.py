@@ -38,8 +38,8 @@ def loginCheckMethod(request):
                 result['success'] = True
                 result['reason'] = '登录成功'
                 request.session['usrname'] = un
-                if not ('AUTO' in request.POST):
-                    print('##########')
+                if request.POST['AUTO'] == 'off':
+                    print('@@@@@@@@@@')
                     request.session.set_expiry(0)
                 return JsonResponse(result)
                 # return HttpResponseRedirect('/index')
@@ -60,10 +60,7 @@ def createNewUser(post):
     newUser.password = post['password']
     newUser.idNumber = post['student_number']
     newUser.email = post['usrname']
-    if 'man' in post:
-        newUser.sex = '男'
-    else:
-        newUser.sex = '女'
+    newUser.sex = post['sex']
     newUser.phonenumber = post['phone_number']
     newUser.eval = post['introduce']
     newUser.authKey = hashlib.sha1(str(random()).encode('utf-8')).hexdigest()
@@ -111,6 +108,7 @@ def registerMethod(request):
     if 'usrname'in request.session:
         del request.session['usrname']
     if request.method == 'POST':
+        print(request.POST)
         if 'submit' in request.POST:  # 先在终端输出错误，之后再编写在网页上提示错误的功能
 
             if len(request.POST['read']) <= 0:  # 没输入用户名
@@ -124,6 +122,9 @@ def registerMethod(request):
                 return render_to_response('register.html', {})
             if len(request.POST['usrname']) <= 0:  # 没输入邮箱
                 print('请输入邮箱！')
+                return render_to_response('register.html', {})
+            if len(request.POST['sex']) <= 0:  # 没输入性别
+                print('请输入性别！')
                 return render_to_response('register.html', {})
             if request.POST['password'] != request.POST['repassword']:  # 密码不一致
                 print('密码不一致')
