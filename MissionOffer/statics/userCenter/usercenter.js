@@ -1,14 +1,26 @@
 function left_input1(){
 	document.getElementById("my_information_input1").style.borderRight="0px";
 	document.getElementById("my_task_input2").style.borderRight="1px solid rgb(100,200,100)";
+	document.getElementById("my_wallet_input3").style.borderRight="1px solid rgb(100,200,100)";
 	document.getElementById("main_task").style.display="none";
 	document.getElementById("main_information").style.display="block";
+	document.getElementById("main_wallet").style.display="none";
 }
 function left_input2(){
 	document.getElementById("my_information_input1").style.borderRight="1px solid rgb(100,200,100)";
+	document.getElementById("my_wallet_input3").style.borderRight="1px solid rgb(100,200,100)";
 	document.getElementById("my_task_input2").style.borderRight="0px";
 	document.getElementById("main_task").style.display="block";
 	document.getElementById("main_information").style.display="none";
+	document.getElementById("main_wallet").style.display="none";
+}
+function left_input3(){
+	document.getElementById("my_information_input1").style.borderRight="1px solid rgb(100,200,100)";
+	document.getElementById("my_task_input2").style.borderRight="1px solid rgb(100,200,100)";
+	document.getElementById("my_wallet_input3").style.borderRight="0px";
+	document.getElementById("main_wallet").style.display="block";
+	document.getElementById("main_information").style.display="none";
+	document.getElementById("main_task").style.display="none";
 }
 function information1(){
 	document.getElementById("task_published_details").style.display="block";

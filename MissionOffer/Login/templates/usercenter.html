@@ -2,7 +2,7 @@
   <head>
   	<title></title>
   	<meta charset="utf-8">
-    <link rel="StyleSheet" href="/statics/userCenter/usercenter.css" type="text/css">
+    <link rel="StyleSheet" href="usercenter.css" type="text/css">
     <style>
       a{text-decoration:none;}
       body{margin:0px;}
@@ -10,7 +10,7 @@
     <script src="/statics/userCenter/usercenter.js"></script>
   </head>
   <body>
-    <script src="/statics/frameworkFolder/framework.js"></script>
+    <script src="/statics/userCenter/framework.js"></script>
     <div id="all">
   	<div id="boss1"></div>
     <div id="boss2">Welcome to User Center</div>
@@ -33,6 +33,7 @@
     <div id="condition_p">
       <div id="my_information_input1"><a href="#" id="my_information" onclick="left_input1()">个人信息</a></div>
       <div id="my_task_input2"><a href="#" id="my_task" onclick="left_input2()">我的任务</a></div>
+      <div id="my_wallet_input3"><a href="#" id="my_wallet" onclick="left_input3()">我的财富</a></div>
     </div>
     <div id="main_information">
       <div id="my_name">账号：{{user.usrname}}</div>
@@ -45,7 +46,7 @@
       <div id="my_introduce">{{user.eval}}</div>
     </div>
     <div id="main_task">
-      <div id="task_published">已发布的任务：{{mylen}}&nbsp;<a href="#" onclick="information1()"><img src="/statics/userCenter/pull.png"></a></div>
+      <div id="task_published">已发布的任务：{{mylen}}&nbsp;<a href="#" onclick="information1()"><img src="pull.png"></a></div>
       <div id="task_published_details">
         {% for i,k in myMissionList %}
           {% url 'viewMission' i.id as missionURL %}
@@ -80,6 +81,19 @@
         <div id="task_watch_two"><img src="/statics/userCenter/apl(yellow).png">&nbsp;家乐福帮带洗衣粉</div>
       </div>
     </div>
-
+    <form action="#" method="post">
+    <div id="main_wallet">
+      <img src="/statics/userCenter/wallet.png" id="wallet_picture">
+      <div id="wallet_word">你的余额为：￥</div>
+      <div id="wallet_number">50</div>
+      <div id="wallet_way_container">
+        支付方式：<input type="radio" id="alipay" name="payway" value="1">&nbsp;&nbsp;支付宝&nbsp;&nbsp;
+        <input type="radio" id="internetbank" name="payway" value="2">&nbsp;&nbsp;网上银行 &nbsp;&nbsp;  
+      </div>
+      <div id="recharge_word">充值金额：</div>
+      <input type="number" name="money_number" id="money">
+      <input type="submit" id="recharge" name="recharge" value="充值">
+    </form>
+    </div>
   </body>
 </html>
