@@ -3,9 +3,8 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from OfferMission.models import *
-from django.core.files import File
-from django.core.servers.basehttp import FileWrapper
 from datetime import datetime
+
 
 def createMissionMethod(request, user):  # 创建一个Mission但是没发布，且没有和Attachment绑定
     newMission =  Mission()
@@ -155,7 +154,9 @@ def viewMissionMethod(request, missionID):
                 elif buttonMark == 3:
                     mission.status = '3'
                     mission.save()
-                    nowUser.money += (mission.reward + mission.fine)
+                    employee=mission.employee
+                    employee.money += (mission.reward + mission.fine)
+                    employee.save()
                 return HttpResponseRedirect('/mission/'+missionID+'/')
 
 
