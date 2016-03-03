@@ -2,25 +2,32 @@
 	<head>
  		<title>login</title>
  		<meta charset="utf-8">
- 		<link href="../css/bootstrap.css" rel="stylesheet">
  		<link href="../css/login.css" rel="stylesheet">
 	</head>
 	<body>
     	<img src="img/top.png">
     	<img src="img/picture.png" class="plane">
     	<div class="login-area">
-    		<div class="username">
+    		<div class="username-box">
             	<p1>账号：</p1>
-            	<input type="text">
+            	<input type="text" name="username" value="" id="username">
+                <div class="error-username">
+                    <img src="img/1.jpg">
+                    <p2 id="name_error-show"></p2>
+                </div>
     		</div>
-    		<div class="password">
+    		<div class="password-box">
     			<p1>密码：</p1>
-    			<input type="text">
+    			<input type="password" name="password" value="" id="password">
+                <div class="error-password">
+                    <img src="img/1.jpg">
+                    <p2 id="password_error-show">密码不正确！</p2>
+                </div>
     		</div>
     		<div class="checkbox">
-    			<img src="img/checked.png">
+    			<img src="img/checked.png" id="remmber-password"><div class="sta-checked-one">0</div>
     			<p1>记住密码</p1>
-    			<img src="img/checked.png">
+    			<img src="img/checked.png" id="auto-login"><div class="sta-checked-two">0</div>
     			<p1>自动登录</p1>
     		</div>
     		<img src="img/login.png" id="btn-login">
