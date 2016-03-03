@@ -176,11 +176,11 @@ def viewMissionMethod(request, missionID):
 
 def downloadFileMethod(request,attachmentID):
     print (int(attachmentID))
-    nowAttchment = Attachment.objects.filter(id__exact=int(attachmentID))
-    if not nowAttchment:
+    nowAttachment = Attachment.objects.filter(id__exact=int(attachmentID))
+    if not nowAttachment:
         return HttpResponse('文件没找到!')
-    nowAttchment = nowAttchment[0]
-    nowFile = nowAttchment.files  # 先写了下载最后一个上传的文件的实现，之后需要实现和任务的链接
+    nowAttachment = nowAttachment[0]
+    nowFile = nowAttachment.files  # 先写了下载最后一个上传的文件的实现，之后需要实现和任务的链接
                                                # 还有需要判断当前下载的用户是否为任务接受者？
     def readFile(f, buf_size=262144):  # 大文件下载，设定缓存大小
         while True:  # 循环读取
@@ -193,6 +193,6 @@ def downloadFileMethod(request,attachmentID):
     # 'attachment; filename='
     response = HttpResponse(readFile(nowFile), content_type='APPLICATION/OCTET-STREAM')  # 设定文件头，这种设定可以让任意文件都能正确下载，而且已知文本文件不是本地打开
     response['Content-Encoding'] = 'utf-8'
-    response['Content-Disposition'] = 'attachment; filename='+ nowAttchment.originName  # 设定传输给客户端的文件名称
+    response['Content-Disposition'] = 'attachment; filename='+ nowAttachment.originName  # 设定传输给客户端的文件名称
     response['Content-Length'] = nowFile.size  # 传输给客户端的文件大小
     return response

@@ -17,30 +17,35 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 
+import Login.views
+import OfferMission.views
+import django.views.static
+
+
 urlpatterns = [
     # Admin
     url(r'^admin/', include(admin.site.urls)),
 
     # Login
-    url(r'^$','Login.views.toIndexMethod',name=''),
-    url(r'^register/$','Login.views.registerMethod',name='register'),
-    url(r'^login/$','Login.views.loginMethod',name='login'),
-    url(r'^index/$','Login.views.toIndexMethod',name='index'),
-    url(r'^index/(?P<type>\d+)/(?P<status>\d*)/*$','Login.views.indexMethod',name='index2'),
+    url(r'^$',Login.views.toIndexMethod,name=''),
+    url(r'^register/$',Login.views.registerMethod,name='register'),
+    url(r'^login/$',Login.views.loginMethod,name='login'),
+    url(r'^index/$',Login.views.toIndexMethod,name='index'),
+    url(r'^index/(?P<type>\d+)/(?P<status>\d*)/*$',Login.views.indexMethod,name='index2'),
     # url(r'^index/(?P<type>\d+)/+(?P<status>\d+)/$','Login.views.indexMethod',name='index'),
-    url(r'^logout/$','Login.views.logoutMethod',name='logout'),
-    url(r'^userCenter/$','Login.views.userCenterMethod',name='userCenter'),
-    url(r'^loginCheck/$','Login.views.loginCheckMethod',name='loginCheck'),
-    url(r'^register/activate/(?P<authKey>\w+)/$','Login.views.activateMethod',name='activate'),
-    url(r'^recharge/$','Login.views.rechargeMethod',name='recharge'),
+    url(r'^logout/$',Login.views.logoutMethod,name='logout'),
+    url(r'^userCenter/$',Login.views.userCenterMethod,name='userCenter'),
+    url(r'^loginCheck/$',Login.views.loginCheckMethod,name='loginCheck'),
+    url(r'^register/activate/(?P<authKey>\w+)/$',Login.views.activateMethod,name='activate'),
+    url(r'^recharge/$',Login.views.rechargeMethod,name='recharge'),
     # OfferMission
-    url(r'^offer/$','OfferMission.views.offerMethod',name='offer'),
+    url(r'^offer/$',OfferMission.views.offerMethod,name='offer'),
     # url(r'^uploadFile/$','OfferMission.views.uploadFileMethod',name='uploadFileMethod'),
-    url(r'^downloadFile/(?P<attachmentID>\d+)/$','OfferMission.views.downloadFileMethod',name='downloadFile'),
+    url(r'^downloadFile/(?P<attachmentID>\d+)/$',OfferMission.views.downloadFileMethod,name='downloadFile'),
 
     # ViewMission
-    url(r'^mission/(?P<missionID>\d+)/$','OfferMission.views.viewMissionMethod',name='viewMission'),
+    url(r'^mission/(?P<missionID>\d+)/$',OfferMission.views.viewMissionMethod,name='viewMission'),
 
     # statics
-    url(r'^statics/(?P<path>.*)', 'django.views.static.serve',{'document_root':settings.STATIC_PATH}),
+    url(r'^statics/(?P<path>.*)', django.views.static.serve,{'document_root':settings.STATIC_PATH}),
 ]
