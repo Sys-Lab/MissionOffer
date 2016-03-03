@@ -1,0 +1,100 @@
+<style>
+	a{
+
+	}
+	body{
+		width:1366px;
+		margin:0 auto;
+		padding:0px;
+	}
+	img{
+		float:left;
+	}
+	.plane{
+		margin-top:50px;
+		margin-left:220px;
+	}
+	.login-area{
+		width:620px;
+		height:630px;
+		float:left;
+	}
+	.username{
+		margin-top:110px;
+		width:620px;
+		height:60px;
+		float:left;
+	}
+	.username p1{
+		margin-top:5px;
+		font-size:28px;
+		float:left;
+		color:black;
+	}
+	.username input{
+		width:300px;
+		height:50px;
+		outline:none;
+		border-radius:10px;
+		border:3px solid;
+		border-color:rgb(174,174,174);
+		float:left;
+		font-size:21px;
+	}
+	.password{
+		margin-top:20px;
+		width:620px;
+		height:60px;
+		float:left;
+	}
+	.password p1{
+		margin-top:5px;
+		font-size:28px;
+		float:left;
+		color:black;
+	}
+	.password input{
+		width:300px;
+		height:50px;
+		outline:none;
+		border-radius:10px;
+		border:3px solid;
+		border-color:rgb(174,174,174);
+		float:left;
+	}
+	.checkbox{
+		padding-left:160px;
+		margin:0px;
+		margin-top:36px;		
+		width:620px;
+		height:40px;
+		float:left;
+	}
+	.checkbox img{
+		float:left;
+	}
+	.checkbox p1{
+		margin-left:5px;
+		margin-right:20px;
+		position:relative;
+		float:left;
+		font-size:18px;
+	}
+	#btn-login{
+		cursor:pointer;
+		margin-top:40px;
+		margin-left:90px;
+	}
+	.register{
+		margin-top:40px;
+		padding-left:265px;
+		width:620px;
+		height:30px;
+		float:left;
+		font-size:15px;
+	}
+	.register a{
+		color:rgb(147,248,158);
+		text-decoration:none;
+	}
+</style>
