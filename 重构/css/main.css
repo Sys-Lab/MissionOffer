@@ -1,0 +1,217 @@
+<style>
+	a{
+
+	}
+	body{
+		width:1366px;
+		margin:0 auto;
+		padding:0px;
+	}
+	img{
+		float:left;
+	}
+	.top{
+		margin:0px;
+		padding:0px;
+		width:1366px;
+		height:50px;
+		float:left;
+		background-image:url("../main/img/top.png");
+	}
+	.top p1{
+		margin-top:12px;
+		margin-left:50px;
+		color:white;
+		font-size:25px;
+		font-family:"微软雅黑";
+		font-weight:bold;
+		float:left;
+	}
+	.top .login_register{
+		color:white;
+		font-size:20px;
+		font-weight:bold;
+		width:150px;
+		margin-left:760px;
+		margin-top:14px;
+		text-align:center;
+		float:left;
+	}
+	.top .login_register a{
+		color:white;
+		text-decoration:none;
+	}
+	.top .login_register a:hover{
+		color:red;
+	}
+	.user-tool{
+		width:1366px;
+		height:80px;
+		float:left;
+		border-bottom:1px solid black;
+	}
+	.user-tool img{
+		margin-top:15px;
+		margin-left:88px;
+		cursor:pointer;
+	}
+	.search{
+		margin-left:567px;
+		margin-top:15px;
+		height:50px;
+		width:300px;
+		float:left;
+		background-color:red;
+		border-radius:10px;
+	}
+	.search input{
+		padding:0px;
+		outline:none;
+		height:35px;
+		float:left;
+		width:230px;
+		border:none;
+		border-radius:8px;
+		margin-top:7px;
+		margin-left:7px;
+		font-size:18px;
+	}
+	#search-btn{
+		margin-top:7px;
+		margin-left:10px;
+		padding:0px;
+		float:left;
+		cursor:pointer;
+	}
+
+	.part-one{
+		margin-left:150px;
+		margin-top:35px;
+		width:241px;
+		height:336px;
+		float:left;
+		background-image:url("../main/img/part-one.png");
+	}
+	.part-one img{
+		cursor:pointer;
+	}
+	#all-change{
+		margin-left:35px;
+		margin-top:15px;
+		margin-right:15px;
+	}
+	#lost-find-change{
+		margin-top:15px;
+		margin-left:40px;
+	}
+	#dining-change{
+		margin-top:20px;
+		margin-left:44px;
+	}
+	#super-change{
+		margin-top:18px;
+		margin-left:44px;
+	}
+	#print-change{
+		margin-top:20px;
+		margin-left:42px;
+	}
+	#out-change{
+		margin-top:20px;
+		margin-left:45px;
+		margin-right:10px;
+	}
+	#other-change{
+		margin-top:17px;
+		margin-left:41px;
+	}
+	.choice{
+		width:472px;
+		height:52px;
+		background-image:url("../main/img/choice.png");
+		float:left;
+		margin-top:33px;
+		margin-left:10px;
+		margin-bottom:10px;
+	}
+	#condition-all{
+		margin-top:15px;
+		margin-left:35px;
+		cursor:pointer;
+		font-size:25px;
+		color:red;
+		float:left;
+	}
+	#condition-take{
+		margin-top:15px;
+		margin-left:62px;
+		cursor:pointer;
+		font-size:25px;
+		color:red;
+		float:left;
+	}
+	#condition-ing{
+		margin-top:15px;
+		margin-left:35px;
+		cursor:pointer;
+		font-size:25px;
+		color:red;
+		float:left;
+	}
+	#condition-finished{
+		margin-top:15px;
+		margin-left:35px;
+		cursor:pointer;
+		font-size:25px;
+		color:red;
+		float:left;
+	}
+	.imformation{
+		margin-left:10px;
+		margin-top:15px;
+		width:615px;
+		height:189px;
+		float:left;
+		background-image:url("../main/img/part-two.png");
+	}
+	.imformation p1{
+		color:green;
+		float:left;
+	}
+	.imformation p2{
+		color:green;
+		float:left;
+	}
+	.imformation p3{
+		color:green;
+		float:left;
+	}
+	.imformation p4{
+		color:green;
+		float:left;
+	}
+	.imformation p5{
+		color:green;
+		float:left;
+	}
+	.imformation p6{
+		color:green;
+		float:left;
+	}
+	.imformation p7{
+		color:green;
+		float:left;
+	}
+	.imformation p8{
+		color:green;
+		float:left;
+	}
+	.imformation p9{
+		color:green;
+		float:left;
+	}
+	.imformation p10{
+		color:green;
+		float:left;
+	}
+</style>
