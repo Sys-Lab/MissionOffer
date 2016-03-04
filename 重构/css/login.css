@@ -19,19 +19,19 @@
 		height:630px;
 		float:left;
 	}
-	.username{
+	.username-box{
 		margin-top:110px;
 		width:620px;
 		height:60px;
 		float:left;
 	}
-	.username p1{
-		margin-top:5px;
+	.username-box p1{
+		margin-top:10px;
 		font-size:28px;
 		float:left;
 		color:black;
 	}
-	.username input{
+	.username-box input{
 		width:300px;
 		height:50px;
 		outline:none;
@@ -41,19 +41,38 @@
 		float:left;
 		font-size:21px;
 	}
-	.password{
+	.error-username{
+		display:none;
+		float:left;
+		width:235px;
+		height:50px;
+	}
+	.error-username img{
+		float:left;
+		margin-top:10px;
+		margin-left:5px;
+	}
+	.error-username p2{
+		color:red;
+		float:left;
+		margin-left:5px;
+		margin-top:15px;
+		font-size:18px;
+		width:195px;
+	}
+	.password-box{
 		margin-top:20px;
 		width:620px;
 		height:60px;
 		float:left;
 	}
-	.password p1{
-		margin-top:5px;
+	.password-box p1{
+		margin-top:10px;
 		font-size:28px;
 		float:left;
 		color:black;
 	}
-	.password input{
+	.password-box input{
 		width:300px;
 		height:50px;
 		outline:none;
@@ -61,6 +80,25 @@
 		border:3px solid;
 		border-color:rgb(174,174,174);
 		float:left;
+	}
+	.error-password{
+		display:none;
+		float:left;
+		width:235px;
+		height:50px;
+	}
+	.error-password img{
+		float:left;
+		margin-top:10px;
+		margin-left:5px;
+	}
+	.error-password p2{
+		color:red;
+		float:left;
+		margin-left:5px;
+		margin-top:15px;
+		font-size:18px;
+		width:195px;
 	}
 	.checkbox{
 		padding-left:160px;
@@ -74,11 +112,18 @@
 		float:left;
 	}
 	.checkbox p1{
+		margin-top:5px;
 		margin-left:5px;
 		margin-right:20px;
 		position:relative;
 		float:left;
 		font-size:18px;
+	}
+	.sta-checked-one{
+		display:none;
+	}
+	.sta-checked-two{
+		display:none;
 	}
 	#btn-login{
 		cursor:pointer;

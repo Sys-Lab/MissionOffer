@@ -42,7 +42,7 @@ $(document).ready(function(){
 			is_post = true;
 		}
 		if(is_post){
-			$.post('', {
+			$.post('hello.php', {
             'username' : $("#username").val(),
             'password' : $("#password").val(),
             'auto_one' : $(".sta-checked-one").html(),
