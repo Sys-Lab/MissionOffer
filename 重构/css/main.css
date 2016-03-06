@@ -61,7 +61,7 @@
 		height:50px;
 		width:300px;
 		float:left;
-		background-color:red;
+		background-color:#66CC66;
 		border-radius:10px;
 	}
 	.search input{
@@ -96,7 +96,7 @@
 		cursor:pointer;
 	}
 	#all-change{
-		margin-left:35px;
+		margin-left:44px;
 		margin-top:15px;
 		margin-right:15px;
 	}
@@ -135,83 +135,322 @@
 		margin-bottom:10px;
 	}
 	#condition-all{
-		margin-top:15px;
+		margin-top:18px;
 		margin-left:35px;
 		cursor:pointer;
-		font-size:25px;
-		color:red;
+		font-size:20px;
+		color:#66CC66;
 		float:left;
 	}
 	#condition-take{
-		margin-top:15px;
-		margin-left:62px;
+		margin-top:18px;
+		margin-left:77px;
 		cursor:pointer;
-		font-size:25px;
-		color:red;
+		font-size:20px;
+		color:black;
 		float:left;
 	}
 	#condition-ing{
-		margin-top:15px;
-		margin-left:35px;
+		margin-top:18px;
+		margin-left:55px;
 		cursor:pointer;
-		font-size:25px;
-		color:red;
+		font-size:20px;
+		color:black;
 		float:left;
 	}
 	#condition-finished{
-		margin-top:15px;
-		margin-left:35px;
+		margin-top:18px;
+		margin-left:43px;
 		cursor:pointer;
-		font-size:25px;
-		color:red;
+		font-size:20px;
+		color:black;
+		float:left;
+	}
+	.imformation-box{
+		margin-left:10px;
+		margin-top:15px;
+		width:615px;
 		float:left;
 	}
 	.imformation{
-		margin-left:10px;
-		margin-top:15px;
+		margin-bottom:20px;
 		width:615px;
 		height:189px;
 		float:left;
 		background-image:url("../main/img/part-two.png");
+		cursor:pointer;
 	}
 	.imformation p1{
-		color:green;
+		margin-top:25px;
+		margin-left:25px;
+		font-size:18px;
+		color:#66CC66;
 		float:left;
 	}
 	.imformation p2{
-		color:green;
+		width:240px;
+		margin-left:10px;
+		margin-top:18px;
+		font-size:25px;
+		color:black;
 		float:left;
 	}
 	.imformation p3{
+		margin-top:15px;
+		font-size:15px;
 		color:green;
 		float:left;
 	}
 	.imformation p4{
-		color:green;
+		width:125px;
+		margin-top:9px;
+		color:#0099CC;
+		font-size:21px;
 		float:left;
 	}
 	.imformation p5{
+		margin-top:15px;
+		font-size:15px;
 		color:green;
 		float:left;
 	}
 	.imformation p6{
-		color:green;
+		width:500px;
+		height:85px;
+		margin-left:63px;
+		margin-top:15px;
+		color:black;
 		float:left;
 	}
 	.imformation p7{
+		width:80px;
+		margin-top:10px;
+		margin-left:25px;
 		color:green;
 		float:left;
 	}
 	.imformation p8{
+		margin-top:10px;
+		margin-left:300px;
 		color:green;
 		float:left;
 	}
 	.imformation p9{
+		margin-top:12px;
 		color:green;
 		float:left;
 	}
 	.imformation p10{
-		color:green;
+		width:110px;
+		margin-left:10px;
+		margin-top:5px;
+		font-size:28px;
+		color:#CC3333;
 		float:left;
+	}
+	.honour-rank{
+		margin-top:-60px;
+		margin-left:40px;
+		width:178px;
+		height:412px;
+		background-image:url("../main/img/part3.png");
+		float:left;
+	}
+	.rank-top{
+		margin-left:10px;
+		width:150px;
+		height:40px;
+		border-bottom:1px dashed black;
+		float:left;
+	}
+	.rank-top img{
+		margin-top:15px;
+		margin-left:7px;
+	}
+	.rank-top p1{
+		margin-top:14px;
+		margin-left:15px;
+		float:left;
+	}
+	.all-coin{
+		position:absolute;
+		width:1366px;
+		background:white;
+		opacity:0.7;
+		height:1222px;
+		display:none;
+	}
+	.footer{
+		margin-left:170px;
+		height:50px;
+		width:300px;
+		float:left;
+	}
+	.publish-task{
+		position:absolute;
+		top:130px;
+		left:340px;
+		width:700px;
+		height:558px;
+		background-color:white;
+		opacity:none;
+		border:1px solid black;
+		float:left;
+		display:none;
+	}
+	.line-one{
+		height:30px;
+		width:700px;
+		float:left;
+
+	}
+	.line-one img{
+		float:right;
+		cursor:pointer;
+	}
+	.publish-task p1{
+		margin-top:10px;
+		margin-left:80px;
+		float:left;
+	}
+	.publish-task input{
+		margin-top:0px;
+		border:1px solid black;
+		border-radius:10px;
+		outline:none;
+		width:250px;
+		height:40px;
+		float:left;
+		color:black;
+    	font-size:18px;
+	}
+	.task-type{
+		margin-top:8px;
+		margin-left:70px;
+		margin-right:88px;
+		height:30px;
+		width:150px;
+		float:left;
+		border:1px solid black;
+		border-radius:10px;
+	}
+	.task-type p11{
+		height:30px;
+		margin-left:20px;
+		float:left;
+		line-height:30px;
+		width:95px;
+		border-right:1px solid black;
+	}
+	.task-type img{
+		margin-top:4px;
+		margin-left:5px;
+		width:20px;
+		height:20px;
+		float:left;
+		cursor:pointer;
+	}
+	.publish-task p2{
+		margin-left:80px;
+		margin-top:50px;
+		float:left;
+	}
+	.publish-task textarea{
+    	margin-top:35px;
+    	height:200px;
+    	width:510px;
+    	outline:none;
+    	border:1px solid black;
+    	resize:none;
+    	float:left;
+    	color:black;
+    	font-size:18px;
+    	border-radius:10px;
+    	margin-right:50px;
+	}
+	#file-send{
+		float:left;
+		border:none;
+		margin-left:450px;
+		margin-top:10px;
+	}
+	#file-send-img{
+		margin-left:445px;
+		margin-top:10px;
+		float:left;
+		cursor:pointer;
+	}
+	.money-box{
+		width:700px;
+		height:40px;
+		float:left;
+	}
+	.money-box p3{
+		margin-top:11px;
+		margin-left:80px;
+		float:left;
+	}
+	.money-box p4{
+		margin-left:20px;
+		margin-top:11px;
+		float:left;
+	}
+	.money-box input{
+		margin:0px;
+		width:100px;
+		float:left;
+	}
+	.date-box{
+		margin-top: 30px;
+		width:700px;
+		height:40px;
+		float:left;
+	}
+	.date-box p5{
+		margin-top:11px;
+		margin-left:80px;
+		float:left;
+	}
+	.date-box input{
+		margin:0px;
+		float:left;
+	}
+	.btn-box{
+		margin-top:25px;
+		width:700px;
+		height:50px;
+		float:left;
+	}
+	.btn-box img{
+		margin-left:203px;
+		cursor:pointer;
+	}
+	.task-choice-box{
+		position:absolute;
+		width:120px;
+		height:125px;
+		border:1px solid black;
+		border-top:none;
+		border-bottom:none;
+		background-color:white;
+		left:475px;
+		top:70px;
+		display:none;
+	}
+	.task-choice-box p6{
+		height:20px;
+		width:120px;
+		float:left;
+		font-size:18px;
+		line-height:21px;
+		text-align:center;
+		border-bottom:1px solid black;
+		cursor:pointer;
+	}
+	#task-type-condition{
+		display:none;
+	}
+	#task-condition{
+		display:none;
 	}
 </style>
